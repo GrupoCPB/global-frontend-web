@@ -34,7 +34,7 @@ const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: 'Poppins',
+        fontFamily: 'Open Sans',
     },
     shape: {
         borderRadius: '3px',
