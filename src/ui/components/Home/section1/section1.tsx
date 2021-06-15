@@ -3,7 +3,7 @@ import {
     BodySection,
     ContainerSction,
     ButtonCadastro
-} from './section1.styles'
+} from './Section1.styles'
 
 import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles'
 
