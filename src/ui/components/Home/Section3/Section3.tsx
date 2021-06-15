@@ -1,5 +1,5 @@
 import React from 'react'
-import { BodySection, ContainerSction, Apresentacao, ButtonCadastro } from './Section3.styles'
+import { BodySection, ContainerSction, Apresentacao, EncontrarVaga } from './Section3.styles'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 function Section2() {
@@ -20,9 +20,9 @@ function Section2() {
 
 
 
-                    <ButtonCadastro variant="contained" endIcon={<ArrowForwardIcon />}>
+                    <EncontrarVaga variant="contained" endIcon={<ArrowForwardIcon />}>
                         Encontre a sua vaga
-                    </ButtonCadastro>
+                    </EncontrarVaga>
 
                 </Apresentacao>
 

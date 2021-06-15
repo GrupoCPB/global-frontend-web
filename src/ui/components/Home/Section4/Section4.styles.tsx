@@ -2,13 +2,12 @@ import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Button, Container } from '@material-ui/core'
 
 export const BodySection = styled('div')`
-    background-color:  ${({ theme }) => theme.palette.primary.dark};
+    background-color:  ${({ theme }) => theme.palette.background.paper};
     width: 100%;
 `;
 
 
 export const ContainerSction = styled(Container)`
-    color:  ${({ theme }) => theme.palette.grey[100]};
     padding-top: 55px;
     display: flex;
     flex-direction: row;
@@ -49,9 +48,9 @@ export const Cadastros = styled(Container)`
     padding-top: 55px;
 `;
 
-export const EncontrarVaga = styled(Button)`
-    background-color: ${({ theme }) => theme.palette.background.paper};
-    color: black;
+export const ButtonCadastro = styled(Button)`
+    
+    background-color:  ${({ theme }) => theme.palette.primary.dark};
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
@@ -61,8 +60,5 @@ export const EncontrarVaga = styled(Button)`
     margin-right: 17px;
     margin-top: 20px ;
 
-    &:hover{
-        background-color: #bebebe ;
-    }
    
 `;
