@@ -91,7 +91,6 @@ export default function Footer() {
                                 Para empresas
                             </Link>
                         </li>
-                        <li></li>
                     </ul>
                 </Nav>
 

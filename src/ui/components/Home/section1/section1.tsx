@@ -3,15 +3,10 @@ import {
     BodySection,
     ContainerSction,
     ButtonCadastro
-<<<<<<< HEAD
-} from './Section1.styles'
-import { Button } from '@material-ui/core'
-=======
 } from './section1.styles'
 
 import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles'
 
->>>>>>> ffdd51a129ec5037ba8d6b7f9c1251eef4a2ea95
 
 function section1() {
     return (

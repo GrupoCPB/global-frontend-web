@@ -3,10 +3,6 @@ import { Button, Container } from '@material-ui/core'
 
 export const BodySection = styled('div')`
     background-color: ${({ theme }) => theme.palette.primary.dark};
-<<<<<<< HEAD
-    position: relative;
-=======
->>>>>>> ffdd51a129ec5037ba8d6b7f9c1251eef4a2ea95
     width: 100%;
 `;
 
@@ -20,9 +16,6 @@ export const ContainerSction = styled(Container)`
     flex-wrap: wrap;
     padding-bottom: 55px;
 `;
-
-
-
 
 export const Cadastros = styled(Container)`
     flex-direction: row;
