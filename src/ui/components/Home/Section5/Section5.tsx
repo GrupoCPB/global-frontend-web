@@ -25,7 +25,7 @@ function Section2() {
                 </Apresentacao>
 
                 <div>
-                    <ImgApresentation src={"/img/home/GlobalOrgParaEmpresas.svg"} alt="" />
+                    <ImgApresentation src={"/img/home/GlobalOrgEmpresas.svg"} alt="" />
                 </div>
 
 
