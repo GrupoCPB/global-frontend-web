@@ -2,16 +2,12 @@ import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Button, Container } from '@material-ui/core'
 
 export const BodySection = styled('div')`
-    background-color: ${({ theme }) => theme.palette.primary.dark};
-<<<<<<< HEAD
-    position: relative;
-=======
->>>>>>> ffdd51a129ec5037ba8d6b7f9c1251eef4a2ea95
+    background-color:  ${({ theme }) => theme.palette.background.paper};
     width: 100%;
 `;
 
+
 export const ContainerSction = styled(Container)`
-    color: white;
     padding-top: 55px;
     display: flex;
     flex-direction: row;
@@ -22,16 +18,14 @@ export const ContainerSction = styled(Container)`
 `;
 
 
-
-
 export const Cadastros = styled(Container)`
     flex-direction: row;
     padding-top: 55px;
 `;
 
 export const ButtonCadastro = styled(Button)`
-    background-color: ${({ theme }) => theme.palette.background.paper};
-    color: black;
+    
+    background-color:  ${({ theme }) => theme.palette.primary.dark};
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
@@ -41,13 +35,7 @@ export const ButtonCadastro = styled(Button)`
     margin-right: 17px;
     margin-top: 20px ;
 
-    &:hover{
-        background-color:  ${({ theme }) => theme.palette.grey[400]};;
-    }
-
-    ${({ theme }) => theme.breakpoints.down('md')}{
+     ${({ theme }) => theme.breakpoints.down('md')}{
         width: 100%;
      }
 `;
-
-

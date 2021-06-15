@@ -2,16 +2,13 @@ import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Button, Container } from '@material-ui/core'
 
 export const BodySection = styled('div')`
-    background-color: ${({ theme }) => theme.palette.primary.dark};
-<<<<<<< HEAD
-    position: relative;
-=======
->>>>>>> ffdd51a129ec5037ba8d6b7f9c1251eef4a2ea95
+    background-color:  ${({ theme }) => theme.palette.primary.dark};
     width: 100%;
 `;
 
+
 export const ContainerSction = styled(Container)`
-    color: white;
+    color:  ${({ theme }) => theme.palette.grey[100]};
     padding-top: 55px;
     display: flex;
     flex-direction: row;
@@ -22,14 +19,12 @@ export const ContainerSction = styled(Container)`
 `;
 
 
-
-
 export const Cadastros = styled(Container)`
     flex-direction: row;
     padding-top: 55px;
 `;
 
-export const ButtonCadastro = styled(Button)`
+export const EncontrarVaga = styled(Button)`
     background-color: ${({ theme }) => theme.palette.background.paper};
     color: black;
     font-family: Open Sans;
@@ -42,12 +37,11 @@ export const ButtonCadastro = styled(Button)`
     margin-top: 20px ;
 
     &:hover{
-        background-color:  ${({ theme }) => theme.palette.grey[400]};;
+        background-color: ${({ theme }) => theme.palette.grey[400]}; 
     }
 
     ${({ theme }) => theme.breakpoints.down('md')}{
         width: 100%;
      }
+   
 `;
-
-

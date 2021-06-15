@@ -1,12 +1,17 @@
 import React from 'react'
 import {
     BodySection,
-    Apresentacao,
     ContainerSction,
-    Cadastros,
     ButtonCadastro
+<<<<<<< HEAD
 } from './Section1.styles'
 import { Button } from '@material-ui/core'
+=======
+} from './section1.styles'
+
+import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles'
+
+>>>>>>> ffdd51a129ec5037ba8d6b7f9c1251eef4a2ea95
 
 function section1() {
     return (
@@ -37,7 +42,7 @@ function section1() {
                 </Apresentacao>
 
                 <div>
-                    <img src={"https://images.vexels.com/media/users/3/157971/isolated/preview/393140c13ded6abdd322098d2d02a6d7-earth-planet-illustration-by-vexels.png"} alt="" width="259px" />
+                    <ImgApresentation src={"/img/home/globo.svg"} alt="" />
                 </div>
 
             </ContainerSction>
