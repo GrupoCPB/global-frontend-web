@@ -1,6 +1,5 @@
 import React from 'react'
 import { BodySection, ContainerSction, BotaoFerrmentas } from './Section5.styles'
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles'
 
 function Section2() {
