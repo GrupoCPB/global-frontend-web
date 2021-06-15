@@ -18,31 +18,6 @@ export const ContainerSction = styled(Container)`
     padding-bottom: 55px;
 `;
 
-export const Apresentacao = styled('div')`
-    font-family: 'Merriweather';
-    width: 50%;
-    text-align: center;
-
-    h1 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 46px;
-    line-height: 58px;
-    }
-
-  
-
-    p {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 31PX;
-         font-weight: 400;
-    }
-
-
-`;
-
 
 export const Cadastros = styled(Container)`
     flex-direction: row;
@@ -62,7 +37,11 @@ export const EncontrarVaga = styled(Button)`
     margin-top: 20px ;
 
     &:hover{
-        background-color: #bebebe ;
+        background-color: ${({ theme }) => theme.palette.grey[400]}; 
     }
+
+    ${({ theme }) => theme.breakpoints.down('md')}{
+        width: 100%;
+     }
    
 `;

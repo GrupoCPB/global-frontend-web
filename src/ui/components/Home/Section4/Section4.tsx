@@ -1,6 +1,7 @@
 import React from 'react'
-import { BodySection, ContainerSction, Apresentacao, ButtonCadastro } from './Section4.styles'
+import { BodySection, ContainerSction, ButtonCadastro } from './Section4.styles'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles'
 
 function Section2() {
     return (
@@ -8,7 +9,7 @@ function Section2() {
             <ContainerSction>
 
                 <div>
-                    <img src={"/img/home/BENEFICIOSGLOBAL.svg"} alt="" />
+                    <ImgApresentation src={"/img/home/BENEFICIOSGLOBAL.svg"} alt="" />
                 </div>
 
                 <Apresentacao>

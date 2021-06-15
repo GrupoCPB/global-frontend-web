@@ -17,30 +17,6 @@ export const ContainerSction = styled(Container)`
     padding-bottom: 55px;
 `;
 
-export const Apresentacao = styled('div')`
-    font-family: 'Merriweather';
-    width: 50%;
-    text-align: center;
-
-    h1 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 46px;
-    line-height: 58px;
-    }
-
-  
-
-    p {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 31PX;
-         font-weight: 400;
-    }
-
-
-`;
 
 
 export const Cadastros = styled(Container)`
@@ -60,5 +36,7 @@ export const ButtonCadastro = styled(Button)`
     margin-right: 17px;
     margin-top: 20px ;
 
-   
+    ${({ theme }) => theme.breakpoints.down('md')}{
+        width: 100%;
+     }
 `;

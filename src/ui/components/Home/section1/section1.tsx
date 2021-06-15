@@ -1,11 +1,11 @@
 import React from 'react'
 import {
     BodySection,
-    Apresentacao,
     ContainerSction,
-    Cadastros,
     ButtonCadastro
 } from './section1.styles'
+
+import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles'
 
 
 function section1() {
@@ -37,7 +37,7 @@ function section1() {
                 </Apresentacao>
 
                 <div>
-                    <img src={"/img/home/globo.svg"} alt="" />
+                    <ImgApresentation src={"/img/home/globo.svg"} alt="" />
                 </div>
 
             </ContainerSction>

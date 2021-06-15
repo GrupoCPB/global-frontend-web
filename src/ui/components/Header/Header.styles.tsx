@@ -43,6 +43,10 @@ export const SocialMedias = styled('div')`
        padding-left: 10px;
     }
 
+     ${({ theme }) => theme.breakpoints.down('md')}{
+        visibility: hidden;
+     }
+
 `;
 
 export const SecondaryAppBar = styled(AppBar)`
@@ -60,5 +64,9 @@ export const SecondaryAppBar = styled(AppBar)`
         padding-right: 25px;
         cursor: pointer;
     }
+
+    ${({ theme }) => theme.breakpoints.down('md')}{
+        font-size: 12px;
+     }
 `;
 
