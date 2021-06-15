@@ -2,12 +2,13 @@ import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Button, Container } from '@material-ui/core'
 
 export const BodySection = styled('div')`
-    background-color: ${({ theme }) => theme.palette.primary.dark};
+    background-color:  ${({ theme }) => theme.palette.background.paper};
     width: 100%;
+    height: 700px;
 `;
 
+
 export const ContainerSction = styled(Container)`
-    color: white;
     padding-top: 55px;
     display: flex;
     flex-direction: row;
@@ -20,31 +21,25 @@ export const ContainerSction = styled(Container)`
 export const Apresentacao = styled('div')`
     font-family: 'Merriweather';
     width: 50%;
+    text-align: center;
 
     h1 {
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     font-size: 46px;
     line-height: 58px;
     }
 
-    a {
-        color: white;
-    }
+  
 
     p {
         font-style: normal;
         font-weight: normal;
-        font-size: 18.0119px;
-        line-height: 150%;
+        font-size: 20px;
+        line-height: 31PX;
+         font-weight: 400;
     }
 
-    h2 {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20.5851px;
-        line-height: 26px;
-    }
 
 `;
 
@@ -55,8 +50,8 @@ export const Cadastros = styled(Container)`
 `;
 
 export const ButtonCadastro = styled(Button)`
-    background-color: ${({ theme }) => theme.palette.background.paper};
-    color: black;
+    
+    background-color:  ${({ theme }) => theme.palette.primary.dark};
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
@@ -66,7 +61,5 @@ export const ButtonCadastro = styled(Button)`
     margin-right: 17px;
     margin-top: 20px ;
 
-    &:hover{
-        background-color: #bebebe ;
-    }
+   
 `;
