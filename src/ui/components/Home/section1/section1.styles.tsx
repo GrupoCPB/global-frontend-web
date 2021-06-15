@@ -4,7 +4,7 @@ import { Button, Container } from '@material-ui/core'
 export const BodySection = styled('div')`
     height: 755px;
     background-color: ${({ theme }) => theme.palette.primary.dark};
-    position: absolute;
+    position: relative;
     width: 100%;
 `;
 

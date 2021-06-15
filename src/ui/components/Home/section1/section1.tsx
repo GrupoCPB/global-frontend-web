@@ -5,7 +5,7 @@ import {
     ContainerSction,
     Cadastros,
     ButtonCadastro
-} from './section1.styles'
+} from './Section1.styles'
 import { Button } from '@material-ui/core'
 
 function section1() {

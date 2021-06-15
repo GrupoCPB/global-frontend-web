@@ -19,7 +19,7 @@ function Header() {
                     <a href="#"><img src={'/icons/WPP.png'} alt=""></img></a>
                     <a href="#"><img src={'/icons/FB.png'} alt=""></img></a>
                     <a href="#"><img src={'/icons/Twitter.png'} alt=""></img></a>
-
+                    
                 </SocialMedias>
             </HeaderAppBar>
             <SecondaryAppBar position={'relative'} >
