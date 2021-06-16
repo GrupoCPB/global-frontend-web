@@ -4,6 +4,7 @@ import { Button, Container } from '@material-ui/core';
 export const BodySection = styled('div')`
     background-color: ${({ theme }) => theme.palette.primary.dark};
     width: 100%;
+    padding-bottom: 100px;
 `;
 
 export const ContainerSction = styled(Container)`
