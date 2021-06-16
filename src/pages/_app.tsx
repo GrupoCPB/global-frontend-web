@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
 import { ThemeProvider } from '@material-ui/core';
 import Head from 'next/head';
 import theme from '../ui/themes/theme';
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
         <Footer />
       </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

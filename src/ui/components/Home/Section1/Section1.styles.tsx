@@ -1,5 +1,5 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
-import { Button, Container } from '@material-ui/core'
+import { Button, Container } from '@material-ui/core';
 
 export const BodySection = styled('div')`
     background-color: ${({ theme }) => theme.palette.primary.dark};
@@ -42,5 +42,3 @@ export const ButtonCadastro = styled(Button)`
         width: 100%;
      }
 `;
-
-
