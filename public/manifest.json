@@ -2,7 +2,7 @@
   "name": "Globall Org",
   "short_name": "Globall",
   "theme_color": "#11709e",
-  "background_color": "#ffffff",
+  "background_color": "rgba(255,255,255,0)",
   "display": "standalone",
   "scope": "/",
   "splash_pages": null,
