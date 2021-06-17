@@ -3,7 +3,7 @@
   "short_name": "Globall",
   "theme_color": "#11709e",
   "background_color": "#72aeec",
-  "display": "fullscreen",
+  "display": "standalone",
   "scope": "/",
   "splash_pages": null,
   "start_url": "/",
