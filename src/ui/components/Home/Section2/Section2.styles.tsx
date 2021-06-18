@@ -7,13 +7,14 @@ export const BodySection = styled('div')`
 `;
 
 export const ContainerSction = styled(Container)`
-  padding-top: 255px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  padding-bottom: 55px;
+    top: -105px;
+    align-content: center;
+    position: relative;
 `;
 
 export const Cadastros = styled(Container)`
@@ -41,11 +42,23 @@ export const GroupCard = styled(Container)`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+   flex-wrap: wrap;
+
+   ${({ theme }) => theme.breakpoints.down('sm')} {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
 `;
 
 export const ContainerFloat = styled(Container)`
-  top: 600px;
-  position: absolute;
+  top: -180px;
+  position: relative;
+ 
 
   h1 {
     color: white;
@@ -54,5 +67,11 @@ export const ContainerFloat = styled(Container)`
     font-weight: bold;
     font-size: 36px;
     text-align: center;
+  }
+
+   ${({ theme }) => theme.breakpoints.down('sm')} {
+     h1 {
+    font-size: 18px;
+     }
   }
 `;

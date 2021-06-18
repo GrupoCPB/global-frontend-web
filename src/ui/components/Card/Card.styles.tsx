@@ -4,9 +4,14 @@ import { Card, Typography, CardActionArea } from '@material-ui/core';
 export const CardWrapper = styled(Card)`
   background-color: #f0f5f7;
   border-radius: 13px;
-  width: 220px;
+  min-width: 220px;
   height: 217px;
   box-shadow: 0px 6.81305px 11.9228px rgba(0, 0, 0, 0.2);
+  margin-bottom: 19px;
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    margin-right: 15px;
+  }
 `;
 
 export const CardAction = styled(CardActionArea)`
