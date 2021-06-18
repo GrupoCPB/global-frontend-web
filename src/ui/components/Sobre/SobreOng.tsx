@@ -1,5 +1,3 @@
-import { sobreOngStyle } from "../ui/components/Sobre/SobreOng.styles"
-
 export default function SobreOng() {
     return(
         <div className="container">
