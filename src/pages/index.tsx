@@ -1,8 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import HomePage from './home'
-import Header from '../ui/components/Header/Header'
 
 export default function Home() {
   return (
@@ -20,12 +17,7 @@ export default function Home() {
         <link rel="apple-touch-startup-image" href="public/android-icon-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)" />
         <link rel="apple-touch-startup-image" href="public/android-icon-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)" />
       </Head>
-
-
-
       <HomePage />
-
-
     </div>
   )
 }
