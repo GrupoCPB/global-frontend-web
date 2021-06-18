@@ -14,11 +14,11 @@ function Section2() {
       <ContainerFloat>
         <h1>BUSQUE POR CATEGORIA DE INTERESSE</h1>
         <GroupCard>
-          <CardButton imgName="ongs.svg" title="ongs" />
-          <CardButton imgName="causas.svg" title="causas" />
-          <CardButton imgName="habilidades.svg" title="habilidades" />
-          <CardButton imgName="plataformas.svg" title="plataformas" subTitle="Em breve" />
-          <CardButton imgName="vagas.svg" title="vagas" subTitle="Em breve" />
+          <CardButton imgName="ONGS.svg" title="ongs" />
+          <CardButton imgName="CAUSAS.svg" title="causas" />
+          <CardButton imgName="HABILIDADES.svg" title="habilidades" />
+          <CardButton imgName="PLATAFORMAS.svg" title="plataformas" subTitle="Em breve" />
+          <CardButton imgName="VAGAS.svg" title="vagas" subTitle="Em breve" />
         </GroupCard>
       </ContainerFloat>
       <ContainerSction>
