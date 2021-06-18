@@ -1,14 +1,15 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
-import { Button, Container } from '@material-ui/core'
+import { Button, Container } from '@material-ui/core';
 
 export const BodySection = styled('div')`
     background-color: ${({ theme }) => theme.palette.primary.dark};
     width: 100%;
+    padding-bottom: 170px;
 `;
 
 export const ContainerSction = styled(Container)`
     color: white;
-    padding-top: 55px;
+    padding-top: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -42,5 +43,3 @@ export const ButtonCadastro = styled(Button)`
         width: 100%;
      }
 `;
-
-
