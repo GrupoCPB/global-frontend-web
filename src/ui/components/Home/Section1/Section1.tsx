@@ -1,54 +1,50 @@
-import React from 'react'
+import React from 'react';
 import {
-    BodySection,
-    ContainerSction,
-    ButtonCadastro
-} from './Section1.styles'
+  BodySection,
+  ContainerSction,
+  ButtonCadastro,
+} from './Section1.styles';
 
-import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles'
-
+import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles';
 
 function section1() {
-    return (
-        <BodySection>
+  return (
+    <BodySection>
+      <ContainerSction>
+        <Apresentacao>
+          <h1> Conheça a Global ORG </h1>
 
-            <ContainerSction>
-                <Apresentacao>
+          <p>
+            A GLOBAL ORG faz parte do Conselho do Povo Brasileiro (CPB),
+            organização que promove cooperação internacional e conecta projetos
+            sociais com empresas, voluntários e pessoas que precisam de ajuda
+            pelo mundo.
+          </p>
 
-                    <h1> Conheça a Global ORG </h1>
+          <a href="/"> Saiba mais </a>
 
-                    <p>
-                        A GLOBAL ORG  faz parte do Conselho do Povo Brasileiro (CPB), organização que promove cooperação internacional e conecta projetos sociais com empresas, voluntários e pessoas que precisam de ajuda pelo mundo.
-                    </p>
+          <h2>Se interessou?</h2>
 
-                    <a href="/sobre"> Saiba mais </a>
+          <p>
+            Cadastre‌ ‌a‌ ‌sua‌ ‌ONG‌ ‌na‌ ‌nossa‌ ‌plataforma‌ ‌e‌ ‌alcance‌
+            ‌voluntários‌ ‌do‌ ‌mundo‌ ‌todo.‌ ‌A‌ ‌Global‌ ORG‌ ‌também‌
+            ‌oferece‌ ‌uma‌ ‌série‌ ‌de‌ ‌ferramentas‌ ‌de‌ ‌gerenciamento‌
+            ‌para‌ ‌a‌ ‌sua‌ ‌ONG!‌
+          </p>
 
-                    <h2>
-                        Se interessou?
-                    </h2>
+          <ButtonCadastro variant="contained">Cadastre sua ONG</ButtonCadastro>
 
-                    <p>
-                        Cadastre‌ ‌a‌ ‌sua‌ ‌ONG‌ ‌na‌ ‌nossa‌ ‌plataforma‌ ‌e‌ ‌alcance‌ ‌voluntários‌ ‌do‌ ‌mundo‌ ‌todo.‌ ‌A‌ ‌Global‌ ORG‌ ‌também‌ ‌oferece‌ ‌uma‌ ‌série‌ ‌de‌ ‌ferramentas‌ ‌de‌ ‌gerenciamento‌ ‌para‌ ‌a‌ ‌sua‌ ‌ONG!‌
-                    </p>
+          <ButtonCadastro variant="contained">
+            Seja um voluntário
+          </ButtonCadastro>
+        </Apresentacao>
 
-                    <ButtonCadastro variant="contained">Cadastre sua ONG</ButtonCadastro>
-
-                    <ButtonCadastro variant="contained">Seja um voluntário</ButtonCadastro>
-                </Apresentacao>
-
-                <div>
-                    <ImgApresentation src={"/img/home/globo.svg"} alt="" />
-                </div>
-
-            </ContainerSction>
-
-
-
-
-
-        </BodySection>
-    )
+        <div>
+          <ImgApresentation src="/img/home/globo.svg" alt="" />
+        </div>
+      </ContainerSction>
+    </BodySection>
+  );
 }
 
-export default section1
-
+export default section1;
