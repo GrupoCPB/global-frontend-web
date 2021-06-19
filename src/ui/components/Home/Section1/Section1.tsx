@@ -21,7 +21,7 @@ function section1() {
                         A GLOBAL ORG  faz parte do Conselho do Povo Brasileiro (CPB), organização que promove cooperação internacional e conecta projetos sociais com empresas, voluntários e pessoas que precisam de ajuda pelo mundo.
                     </p>
 
-                    <a href="/"> Saiba mais </a>
+                    <a href="/sobre"> Saiba mais </a>
 
                     <h2>
                         Se interessou?
