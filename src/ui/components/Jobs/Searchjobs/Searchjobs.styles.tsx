@@ -1,9 +1,22 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
-import { AppBar, TextField } from '@material-ui/core';
+import { AppBar, TextField, Card, Container } from '@material-ui/core';
 
-export const SearchArea = styled('div')`
-    display:flex;
+export const BodySearch = styled('div')`
+    background-color: ${({ theme }) => theme.palette.primary.light};
+    width: 100%;
 
-    width:100%;
-    height:60px;
+`;
+
+export const ContainerSearch = styled(Container)`
+    padding-top: 55px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 55px;
+`;
+
+export const BodyCard = styled(Card)`
+   background-color: ${({ theme }) => theme.palette.primary.dark};
+   width: 100%;
+   padding: 15px;
 `;
