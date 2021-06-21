@@ -1,5 +1,5 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
-import { Card, Divider, List } from '@material-ui/core';
+import { Card, List } from '@material-ui/core';
 
 
 export const BodyCard = styled(Card)`

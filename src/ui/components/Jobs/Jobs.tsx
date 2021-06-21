@@ -3,7 +3,7 @@ import InfoJobs from './Infojobs/InfoJobs'
 import ListJobs from './ListJobs/ListJobs'
 import SearchJobs from './SearchJobs/SearchJobs'
 
-import { BodySearch, BodyCard, ContainerSearch, JobsInfos } from './Jobs.styeles'
+import { BodyCard, ContainerSearch, JobsInfos } from './Jobs.styeles'
 
 function Jobs() {
     return (

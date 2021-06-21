@@ -1,10 +1,6 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Container, Button } from '@material-ui/core';
 
-
-
-
-
 export const Image = styled('img')`
     height:62px;
 `;
