@@ -1,8 +1,32 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
-import { Container, Button } from '@material-ui/core';
+import { Card, Container, Button } from '@material-ui/core';
 
+export const BodySearch = styled('div')`
+    background-color: ${({ theme }) => theme.palette.primary.light};
+    width: 100%;
 
+`;
 
+export const JobsInfos = styled('div')`
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+`;
+
+export const ContainerSearch = styled(Container)`
+    padding-top: 55px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 55px;
+`;
+
+export const BodyCard = styled(Card)`
+   background-color: ${({ theme }) => theme.palette.primary.dark};
+   width: 100%;
+   padding: 15px;
+   height: 954px;
+`;
 
 
 export const Image = styled('img')`
@@ -10,11 +34,11 @@ export const Image = styled('img')`
 `;
 
 export const SearchArea = styled(Container)`
-    width:100%;
+    width:1100px;
     height:95px;
 
     display:flex;
- 
+    justify-content:center;
     align-items: center;
 
     gap:1rem;

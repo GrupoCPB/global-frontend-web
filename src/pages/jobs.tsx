@@ -1,14 +1,11 @@
 import React from 'react'
-import Searchjobs from '../ui/components/Jobs/Searchjobs/Searchjobs';
+import Searchjobs from '../ui/components/Jobs/SearchJobs/SearchJobs';
+
+import JobsComponet from '../ui/components/Jobs/Jobs'
 
 import {
-    Container,
-    JobsArea,
-    JobsResult,
-    JobsInfoArea
+    Container
 } from '../ui/styles/Jobs.styles';
-
-import InfoJobs from '../ui/components/Jobs/Infojobs/InfoJobs'
 
 
 
@@ -16,15 +13,7 @@ function Jobs() {
     return (
         <>
             <Container role="section">
-                <JobsArea>
-                    <Searchjobs />
-                    <JobsResult>
-                        <div>...</div>
-                        <JobsInfoArea>
-                            <InfoJobs />
-                        </JobsInfoArea>
-                    </JobsResult>
-                </JobsArea>
+                <JobsComponet />
             </Container>
         </>
     );

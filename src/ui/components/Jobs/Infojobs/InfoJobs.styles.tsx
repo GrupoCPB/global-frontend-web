@@ -4,28 +4,27 @@ import theme from '../../../themes/theme';
 
 
 export const InfoArea = styled('div')`
-width:743px;
-height:100vh;
-display:flex;
-flex-direction:column;
+   width:100%;
+   max-height: 994px;
+ 
+   flex-direction:column;
 
-margin:22px;
-border-radius: 0px 12px 12px 0px;
+   border-radius: 0px 12px 12px 0px;
 
-background-color: ${({ theme }) => theme.palette.grey[50]};
+   background-color: ${({ theme }) => theme.palette.grey[50]};
 
-overflow-Y:scroll;
+   overflow-Y:scroll;
 
 
-::-webkit-scrollbar {
-   width:6px;
-   background: ${({ theme})=> theme.palette.primary.main};
-   border-radius:3px;
-}
-::-webkit-scrollbar-thumb {
-   background: ${({ theme})=> theme.palette.primary.dark};
-   border-radius:3px;
-}
+   ::-webkit-scrollbar {
+      width:6px;
+      background: ${({ theme }) => theme.palette.primary.main};
+      border-radius:3px;
+   }
+   ::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.palette.primary.dark};
+      border-radius:3px;
+   }
 `;
 
 export const HeaderInfo = styled('div')`

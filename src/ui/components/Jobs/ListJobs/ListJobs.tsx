@@ -6,110 +6,92 @@ import { Avatar, ListItem, ListItemAvatar, ListItemText, Typography } from '@mat
 function ListJobs() {
     const ongs = [
         {
-            logo: '/img/mais.jpg',
             vaga: 'UX Design',
             nome: 'MAIS',
             local: 'São Paulo'
         },
         {
-            logo: '',
-            vaga: 'UX Design',
-            nome: 'MAIS',
+            vaga: 'VISUAL DESIGN',
+            nome: 'Canoa para Todos',
             local: 'São Paulo'
         },
         {
-            logo: '/img/mais.jpg',
-            vaga: 'UX Design',
-            nome: 'MAIS',
+            vaga: 'Designer De Produto',
+            nome: 'Sou do Bem',
             local: 'São Paulo'
         },
         {
-            logo: '/img/mais.jpg',
-            vaga: 'UX Design',
-            nome: 'MAIS',
+            vaga: 'Product Designer',
+            nome: 'Cidadania Jovem',
             local: 'São Paulo'
         },
         {
-            logo: '/img/mais.jpg',
-            vaga: 'UX Design',
-            nome: 'MAIS',
+            vaga: 'UI/UX DESIGN',
+            nome: 'Amigo Bicho',
             local: 'São Paulo'
         },
         ,
         {
-            logo: '/img/mais.jpg',
+            vaga: 'Product Designer',
+            nome: 'ONG BRASIL',
+            local: 'São Paulo'
+        },
+        {
+            vaga: 'Design Gráfico',
+            nome: 'Cores para vida',
+            local: 'São Paulo'
+        },
+        {
+            vaga: 'UX Design',
+            nome: 'ABCD’S',
+            local: 'São Paulo'
+        },
+        {
+            vaga: 'UI Design',
+            nome: 'ONG Ubutu Brasília',
+            local: 'São Paulo'
+        },
+        {
+            vaga: 'UX Design',
+            nome: 'Abong',
+            local: 'São Paulo'
+        },
+        {
             vaga: 'UX Design',
             nome: 'MAIS',
             local: 'São Paulo'
         },
         {
-            logo: '/img/mais.jpg',
             vaga: 'UX Design',
             nome: 'MAIS',
             local: 'São Paulo'
         },
         {
-            logo: '/img/mais.jpg',
             vaga: 'UX Design',
             nome: 'MAIS',
             local: 'São Paulo'
         },
         {
-            logo: '/img/mais.jpg',
             vaga: 'UX Design',
             nome: 'MAIS',
             local: 'São Paulo'
         },
         {
-            logo: '/img/mais.jpg',
             vaga: 'UX Design',
             nome: 'MAIS',
             local: 'São Paulo'
         },
         {
-            logo: '/img/mais.jpg',
             vaga: 'UX Design',
             nome: 'MAIS',
             local: 'São Paulo'
         },
         {
-            logo: '/img/mais.jpg',
             vaga: 'UX Design',
             nome: 'MAIS',
             local: 'São Paulo'
         },
         {
-            logo: '/img/mais.jpg',
-            vaga: 'UX Design',
-            nome: 'MAIS',
-            local: 'São Paulo'
-        },
-        {
-            logo: '/img/mais.jpg',
-            vaga: 'UX Design',
-            nome: 'MAIS',
-            local: 'São Paulo'
-        },
-        {
-            logo: '/img/mais.jpg',
-            vaga: 'UX Design',
-            nome: 'MAIS',
-            local: 'São Paulo'
-        },
-        {
-            logo: '/img/mais.jpg',
-            vaga: 'UX Design',
-            nome: 'MAIS',
-            local: 'São Paulo'
-        },
-        {
-            logo: '/img/mais.jpg',
-            vaga: 'UX Design',
-            nome: 'MAIS',
-            local: 'São Paulo'
-        },
-        {
-            logo: '/img/mais.jpg',
             vaga: 'UX Design',
             nome: 'MAIS',
             local: 'São Paulo'
@@ -119,9 +101,9 @@ function ListJobs() {
     const vagaLoop = ongs.map((vaga, index) => {
         return (
             <>
-                <ListItem alignItems="flex-start">
+                <ListItem alignItems="flex-start" key={index}>
                     <ListItemAvatar>
-                        <Avatar alt="Mais logo" src={vaga.logo} />
+                        <Avatar src={`/img/ongs_empresas/${vaga.nome}.png`} />
                     </ListItemAvatar>
                     <ListItemText
                         primary={vaga.vaga}
@@ -140,7 +122,7 @@ function ListJobs() {
                         }
                     />
                 </ListItem>
-                <DividerJobs variant="inset" />
+                <DividerJobs />
             </>
         );
     })
