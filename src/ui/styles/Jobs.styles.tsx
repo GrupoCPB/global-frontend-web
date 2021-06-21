@@ -1,7 +1,7 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 
 export const Container = styled('section')`
-    height:100vh;
+    height:auto;
     width:100%;
 
     display:flex;
@@ -28,10 +28,7 @@ export const JobsArea = styled('div')`
 
 export const JobsResult = styled('section')`
     display:inherit;
-    flex-direction:row;
-    
-    
-    
+    flex-direction:row;    
 `;
 
 export const JobsInfoArea = styled('div')`

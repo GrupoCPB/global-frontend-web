@@ -22,13 +22,9 @@ function Jobs() {
                             <InfoJobs/>
                         </JobsInfoArea>
                     </JobsResult>                 
-                </JobsArea>
-                
+                </JobsArea>                
             </Container>
-        </>
-
-        
-
+        </> 
     );
 }
 export default Jobs;

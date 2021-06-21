@@ -4,7 +4,8 @@ import theme from '../../../themes/theme';
 
 
 export const InfoArea = styled('div')`
-width:723px;
+width:743px;
+height:100vh;
 display:flex;
 flex-direction:column;
 
@@ -13,6 +14,18 @@ border-radius: 0px 12px 12px 0px;
 
 background-color: ${({ theme }) => theme.palette.grey[50]};
 
+overflow-Y:scroll;
+
+
+::-webkit-scrollbar {
+   width:6px;
+   background: ${({ theme})=> theme.palette.primary.main};
+   border-radius:3px;
+}
+::-webkit-scrollbar-thumb {
+   background: ${({ theme})=> theme.palette.primary.dark};
+   border-radius:3px;
+}
 `;
 
 export const HeaderInfo = styled('div')`
@@ -112,4 +125,31 @@ justify-content:center;
       border-left:0.2px solid ${({ theme }) => theme.palette.text.primary};
    }
 
+`;
+
+
+export const DescriptionInfo = styled('div')`
+padding:28px 60px;
+
+   h3{
+      font-family: Merriweather;
+      font-weight: 900;
+      font-size: 18px;
+   }
+
+   div{
+      padding:0rem 1rem;
+      
+      span{
+         font-width:400; 
+         font-size: 14px
+      }      
+   }   
+   .list{
+      max-width:530px;
+      li{
+         font-width:400; 
+         font-size: 14px         
+      }
+   }
 `;
