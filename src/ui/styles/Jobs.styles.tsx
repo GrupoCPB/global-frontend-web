@@ -19,7 +19,7 @@ export const JobsArea = styled('div')`
 
     display:inherit;
     align-items: center;
-    flex-direction:column;
+    flex-direction:column; 
 
     border-radius:12px;
 
@@ -29,8 +29,12 @@ export const JobsArea = styled('div')`
 export const JobsResult = styled('section')`
     display:inherit;
     flex-direction:row;
+    
+    
+    
 `;
 
 export const JobsInfoArea = styled('div')`
-    width:723px;    
+    width:723px;   
+    justify-content:center; 
 `;
