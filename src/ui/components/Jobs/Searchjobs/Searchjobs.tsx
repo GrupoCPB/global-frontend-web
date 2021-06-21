@@ -3,7 +3,7 @@ import React from 'react'
 import { 
     Image,
     SearchArea,
-    SearchInput,
+    FormArea,
     ButtonSubmit
 } from './Searchjobs.styles'
 
@@ -11,20 +11,19 @@ import {
 function Searchjobs() {
     return (
         <SearchArea>
-            <Image src={'/img/logo.png'} alt="logo global org em cores azul e roxo"/>
-            <SearchInput 
-            placeholder="Digite uma função" 
-            autoFocus={true}
-            />
-            <SearchInput 
-            placeholder="Digite uma Cidade" 
-            autoFocus={true}
-            />
-            <ButtonSubmit>
-                Pesquisar
-            </ButtonSubmit>
+            <Image src={'/img/logo.png'} alt="logo global org em cores azul e roxo"/>            
+            <FormArea action="" method="POST">
+                <label>
+                    <input type="text" placeholder="UX Design" />
+                </label>
+                <label >
+                    <input type="text" placeholder="São Paulo"/>
+                </label>
+                <ButtonSubmit type="submit">
+                    Pesquisar
+                </ButtonSubmit>           
+            </FormArea>            
         </SearchArea>
     )
 }
-
 export default Searchjobs

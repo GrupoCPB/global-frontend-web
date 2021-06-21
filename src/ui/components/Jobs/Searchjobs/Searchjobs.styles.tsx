@@ -1,6 +1,9 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Container, Button} from '@material-ui/core';
 
+
+
+
 export const Image = styled('img')`
     height:62px;
 `;
@@ -17,19 +20,27 @@ export const SearchArea = styled(Container)`
     border-radius:12px;
     
     background-color: ${({theme}) => theme.palette.grey[100]}
+    
 
 `;
 
-export const SearchInput = styled('input')`
-    height:44px;
-    width:389px;
+export const FormArea = styled('form')`
+    
+    display:flex;
+    gap:1rem;
+    
+    input{
+        height:44px;
+        width:389px;
 
-    border-radius:8px;
-    border:1px solid #404040;
-    background-color:#EDEDED; 
+        border-radius:8px;
+        border:1px solid #404040;
+        background-color:#EDEDED; 
 
-    font-size:1rem;
-    font-family: Open Sans;
+        font-size:1rem;
+        font-family: Open Sans;
+    } 
+
 `;
 
 export const ButtonSubmit = styled(Button)`

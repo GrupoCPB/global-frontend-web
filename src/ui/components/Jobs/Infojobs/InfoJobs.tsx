@@ -9,7 +9,7 @@ function InfoJobs() {
     return(
         <InfoArea>
             <HeaderInfo>
-                <img src="" alt="logo empresa..."/>
+                <img src={'/img/jobs/logo.png'} alt="logo empresa..."/>
                 <div className="info-header">
                     <h2>UI/UX DESIGN</h2>
                     <p>Grupo CPB</p>
