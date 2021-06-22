@@ -25,6 +25,10 @@ export const InputBusca = styled('input')`
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
     }
+
+    ${({ theme }) => theme.breakpoints.down('md')}{
+        width: 100%;
+     }
 `;
 
 export const HeaderLogo = styled('img')`
@@ -67,6 +71,7 @@ export const SecondaryAppBar = styled(AppBar)`
 
     ${({ theme }) => theme.breakpoints.down('md')}{
         font-size: 12px;
+        justify-content: center;
      }
 `;
 
