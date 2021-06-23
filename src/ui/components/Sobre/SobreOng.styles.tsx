@@ -17,6 +17,8 @@ export const SobreOngBody = styled('body')`
 export const SobreOngContainer = styled('div')`
     padding: 0px 100px 50px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 `;
 
 export const SobreOngContent = styled('div')`
