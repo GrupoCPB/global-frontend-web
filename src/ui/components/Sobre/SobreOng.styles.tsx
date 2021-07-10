@@ -73,6 +73,10 @@ export const SobreOngBtn2 = styled(Button)`
 export const SobreOngImgContent = styled('div')`
     margin-top: auto;
     margin-bottom: auto;
+    
+    ${({ theme }) => theme.breakpoints.down('md')}{
+        width: 100%;
+    }
 `;
 
 export const SobreOngImgContentImg = styled('img')`
