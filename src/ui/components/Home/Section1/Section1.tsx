@@ -21,7 +21,7 @@ function section1() {
             pelo mundo.
           </p>
 
-          <a href="/"> Saiba mais </a>
+          <a href="/sobre"> Saiba mais </a>
 
           <h2>Se interessou?</h2>
 
