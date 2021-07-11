@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Button } from '@material-ui/core';
 import {
   SobreOngBody,
   SobreOngBtn,
@@ -7,10 +8,8 @@ import {
   SobreOngContent,
   SobreOngImgContent,
   SobreOngImgContentImg,
-  SobreOngSegundoP
-} from "./SobreOng.styles";
-
-import { Button } from "@material-ui/core";
+  SobreOngSegundoP,
+} from './SobreOng.styles';
 
 export default function SobreOng() {
     return(
@@ -34,11 +33,11 @@ export default function SobreOng() {
                 <SobreOngBtn2 variant="contained" color="secondary">Ajudar a comunidade</SobreOngBtn2>
                 </SobreOngBtn>
             </SobreOngContent>
-            
+
             <SobreOngImgContent>
                 <SobreOngImgContentImg src="/img/home/globo.svg" />
             </SobreOngImgContent>
         </SobreOngContainer>
-    </SobreOngBody>
-    )
+      </SobreOngBody>
+    );
 }
