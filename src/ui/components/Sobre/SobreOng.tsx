@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   SobreOngBody,
   SobreOngBtn,
@@ -7,13 +7,10 @@ import {
   SobreOngContent,
   SobreOngImgContent,
   SobreOngImgContentImg,
-  SobreOngSegundoP,
+  SobreOngSegundoP
+} from "./SobreOng.styles";
 
-} from "./SobreOng.styles"
-
-import {
-    Button
-} from "@material-ui/core"
+import { Button } from "@material-ui/core";
 
 export default function SobreOng() {
     return(

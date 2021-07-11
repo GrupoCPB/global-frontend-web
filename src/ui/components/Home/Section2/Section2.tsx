@@ -1,10 +1,10 @@
 import React from 'react';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+// import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import {
-  BodySection, ContainerSction, ButtonCadastro, GroupCard, ContainerFloat,
+  BodySection, GroupCard, ContainerFloat,
 } from './Section2.styles';
 
-import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles';
+// import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles';
 // eslint-disable-next-line import/extensions
 import CardButton from '../../Card/CardButton';
 
@@ -21,7 +21,7 @@ function Section2() {
           <CardButton imgName="VAGAS.svg" title="vagas" subTitle="Em breve" />
         </GroupCard>
       </ContainerFloat>
-{/*       
+{/*
       <ContainerSction>
 
         <div>
@@ -42,7 +42,8 @@ function Section2() {
 
         </Apresentacao>
 
-      </ContainerSction> */}
+      </ContainerSction> */
+}
     </BodySection>
   );
 }

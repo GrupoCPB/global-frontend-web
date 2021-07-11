@@ -1,8 +1,8 @@
 import React from 'react';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import {
-  BodySection, 
-  ContainerSction, 
+  BodySection,
+  ContainerSction,
   ButtonCadastro,
 } from './Section2a.styles';
 
@@ -12,7 +12,7 @@ import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles';
 function Section2a() {
   return (
     <BodySection>
-      
+
       <ContainerSction>
 
         <div>
