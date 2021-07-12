@@ -14,7 +14,6 @@ function home() {
             <Section3 />
             <Section4 />
             <Section5 />
-            letra a b
         </>
     )
 }
