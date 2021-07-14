@@ -1,14 +1,15 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
-import { Button, Container } from '@material-ui/core'
+import { Button, Container } from '@material-ui/core';
 
 export const BodySection = styled('div')`
     background-color: ${({ theme }) => theme.palette.primary.dark};
     width: 100%;
+    padding-bottom: 170px;
 `;
 
 export const ContainerSction = styled(Container)`
     color: white;
-    padding-top: 55px;
+    padding-top: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -33,14 +34,10 @@ export const ButtonCadastro = styled(Button)`
     border-radius: 6.86169px;
     margin-right: 17px;
     margin-top: 20px ;
-
     &:hover{
         background-color:  ${({ theme }) => theme.palette.grey[400]};;
     }
-
     ${({ theme }) => theme.breakpoints.down('md')}{
         width: 100%;
      }
 `;
-
-
