@@ -39,3 +39,38 @@ export const ButtonCadastro = styled(Button)`
         width: 100%;
      }
 `;
+
+export const GroupCard = styled(Container)`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+   flex-wrap: wrap;
+   ${({ theme }) => theme.breakpoints.down('sm')} {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+`;
+
+export const ContainerFloat = styled(Container)`
+  top: -180px;
+  position: relative;
+ 
+  h1 {
+    color: white;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+  }
+   ${({ theme }) => theme.breakpoints.down('sm')} {
+     h1 {
+    font-size: 18px;
+     }
+  }
+`;
