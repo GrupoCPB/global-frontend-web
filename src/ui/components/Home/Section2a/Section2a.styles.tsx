@@ -32,6 +32,7 @@ export const ButtonCadastro = styled(Button)`
   border-radius: 6.86169px;
   margin-right: 17px;
   margin-top: 20px;
+
   ${({ theme }) => theme.breakpoints.down('md')} {
     width: 100%;
   }
@@ -43,6 +44,7 @@ export const GroupCard = styled(Container)`
   justify-content: space-around;
   align-items: center;
    flex-wrap: wrap;
+
    ${({ theme }) => theme.breakpoints.down('sm')} {
     display: flex;
     flex-direction: row;
@@ -57,6 +59,7 @@ export const ContainerFloat = styled(Container)`
   top: -180px;
   position: relative;
  
+
   h1 {
     color: white;
     font-family: Open Sans;
@@ -65,6 +68,7 @@ export const ContainerFloat = styled(Container)`
     font-size: 36px;
     text-align: center;
   }
+
    ${({ theme }) => theme.breakpoints.down('sm')} {
      h1 {
     font-size: 18px;

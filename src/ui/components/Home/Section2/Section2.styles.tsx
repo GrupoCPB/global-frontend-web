@@ -42,7 +42,7 @@ export const GroupCard = styled(Container)`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-   flex-wrap: wrap;
+  flex-wrap: wrap;
    ${({ theme }) => theme.breakpoints.down('sm')} {
     display: flex;
     flex-direction: row;
