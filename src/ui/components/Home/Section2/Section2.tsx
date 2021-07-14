@@ -1,8 +1,7 @@
 import React from 'react';
 // import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import {
-  BodySection, GroupCard, ContainerFloat,
-} from './Section2.styles';
+  BodySection, GroupCard, ContainerFloat } from '../../Home/Section2/Section2.styles';
 
 // import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles';
 // eslint-disable-next-line import/extensions
