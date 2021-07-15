@@ -1,7 +1,10 @@
 import React from 'react';
-import { Toolbar } from '@material-ui/core';
 import {
-  HeaderAppBar, HeaderLogo, SecondaryAppBar, InputBusca, SocialMedias,
+  HeaderAppBar,
+  HeaderLogo,
+  SecondaryAppBar,
+  InputBusca,
+  SocialMedias,
 } from './Header.styles';
 
 function Header() {
@@ -20,16 +23,12 @@ function Header() {
           <a href="#"><img src="/icons/WPP.png" alt="" /></a>
           <a href="#"><img src="/icons/FB.png" alt="" /></a>
           <a href="#"><img src="/icons/Twitter.png" alt="" /></a>
-
         </SocialMedias>
       </HeaderAppBar>
       <SecondaryAppBar position="relative">
         <a> Para empresas  </a>
-
         <a> Sou um projeto  </a>
-
         <a> Entrar </a>
-
         <a> Ajudar  </a>
       </SecondaryAppBar>
     </>

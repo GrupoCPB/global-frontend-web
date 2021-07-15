@@ -25,8 +25,6 @@ export default function SobreOng() {
             pelo mundo.
           </p>
 
-          <a href="/sobre"> Saiba mais </a>
-
           <h2>Se interessou?</h2>
 
           <p>

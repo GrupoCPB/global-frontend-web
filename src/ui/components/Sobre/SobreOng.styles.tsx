@@ -20,8 +20,8 @@ export const ContainerSection = styled(Container)`
 `;
 
 export const ButtonCadastro = styled(Button)`
-    background-color: ${({ theme }) => theme.palette.background.paper};
-    color: black;
+    background-color: ${({ theme }) => theme.palette.secondary.dark};
+    color: ${({ theme }) => theme.palette.grey[50]};
     font-family: Open Sans;
     font-weight: 600;
     width: 222px;
