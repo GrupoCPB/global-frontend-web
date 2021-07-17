@@ -12,9 +12,9 @@ export const ContainerSction = styled(Container)`
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-    top: -105px;
-    align-content: center;
-    position: relative;
+  top: -105px;
+  align-content: center;
+  position: relative;
 `;
 
 export const Cadastros = styled(Container)`
