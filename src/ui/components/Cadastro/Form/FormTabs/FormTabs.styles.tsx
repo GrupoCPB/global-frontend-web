@@ -4,6 +4,7 @@ export const Tabs = styled('div')`
     display: flex;
     width: 100%;
     justify-content: space-between;
+    background: #520B3190;
 
     div {
         display: grid;
@@ -16,7 +17,6 @@ export const Tabs = styled('div')`
         background: rgba(237, 237, 237, 1);
         z-index; -1;
         box-shadow: 3px -4.3px 5px rgba(0, 0, 0, 0.25);
-        cursor: pointer;
     }
 
     .active {

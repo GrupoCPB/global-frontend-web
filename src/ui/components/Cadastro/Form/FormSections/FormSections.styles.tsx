@@ -3,12 +3,12 @@ import { styled } from '@material-ui/core';
 const Template = styled('div')`
     width: 100%;
     background: white;
-    border-radius: 0 0 6px 6px;
-    padding-bottom: 50px;
-    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-content: center;
+    flex: none;
+    position: relative;
     
     h2 {
         font-family: Merriweather;
@@ -21,27 +21,24 @@ const Template = styled('div')`
         margin: 0;
     }
 
-    form {
+    .form {
         width: 60%;
-        height: 90%;
+        height: auto;
         margin: auto;
+
     }
 
     button {
         cursor: pointer;
     }
 
-    &#section2 {
-        form {
-            margin-top: 50px;
-        }
-    }
 `
 
 export const Acesso = styled(Template)`
     text-align: center;
     display: flex;
     flex-direction: column;
+    height: auto;
 
     img {
         width: 60px;
@@ -109,7 +106,7 @@ export const Acesso = styled(Template)`
 `;
 
 export const InfoGeral = styled(Template)`
-    form {
+    .form {
         #cima {
             display: grid;
             grid-template-columns: 70% 5% 25%;
@@ -127,11 +124,12 @@ export const Sobre = styled(Template)`
 `;
 
 export const Contato = styled(Template)`
-    form {
+    .form {
         #selects {
             div {
                 display: grid;
                 grid-template-columns: 60% 5% 35%;
+                place-items: none;
             }
         }
     }

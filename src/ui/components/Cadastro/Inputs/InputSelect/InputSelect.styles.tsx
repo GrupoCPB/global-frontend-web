@@ -12,7 +12,7 @@ export const SelectStyled = styled('label')`
 
     select {
         border-radius: 6px;
-        border solid 1px black;
+        border solid 2px black;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         1px solid #000000;
         padding: 5px 3px;

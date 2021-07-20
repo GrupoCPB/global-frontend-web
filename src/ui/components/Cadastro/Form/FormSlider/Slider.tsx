@@ -1,17 +1,11 @@
 import { SliderStyles } from './Slider.styles';
 
 export default function Slider(props) {
-    if (props.section === 1) {
-        return(
-            <SliderStyles id='sliderDiv'>
-                <span className='hasBefore'></span>
-                <span></span>
-                <span></span>
-            </SliderStyles>
-        )
+    if (props.formSection === 0) {
+        return null
     }
 
-    if (props.section === 2) {
+    if (props.formSection === 2) {
         return(
             <SliderStyles id='sliderDiv'>
                 <span></span>
@@ -21,7 +15,7 @@ export default function Slider(props) {
         )
     }
 
-    if (props.section === 3) {
+    if (props.formSection === 3) {
         return(
             <SliderStyles id='sliderDiv'>
                 <span></span>
@@ -31,4 +25,11 @@ export default function Slider(props) {
         )
     }
 
+    return(
+        <SliderStyles id='sliderDiv'>
+            <span className='hasBefore'></span>
+            <span></span>
+            <span></span>
+        </SliderStyles>
+    )
 }

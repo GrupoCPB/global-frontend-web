@@ -2,7 +2,7 @@ import { styled } from '@material-ui/core';
 
 export const ConfirmarStyles = styled('button')`
     display: block;
-    margin: 60px auto 0;
+    margin: 0 auto;
     height: 48px;
     width: 225px;
     border-radius: 8px;

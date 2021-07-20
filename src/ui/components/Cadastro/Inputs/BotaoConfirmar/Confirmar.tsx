@@ -1,14 +1,19 @@
-import { MouseEventHandler } from 'react';
-import { EventHandler } from 'react';
+import { ReactEventHandler } from 'react';
+import { EventHandler, useState } from 'react';
 import { ConfirmarStyles } from './Confirmar.styles';
 
 type BotaoConfirmar = {
-    label: string,
-    function?: MouseEventHandler
+    formSection: number
+    goNext: any,
+    confirmData: Function
 }
 
 export default function Confirmar(props: BotaoConfirmar) {
+    if (props.formSection === 0) {
+        return null
+    }
+    
     return (
-        <ConfirmarStyles>{props.label}</ConfirmarStyles>
+        <ConfirmarStyles type='button' onClick={props.goNext}>{props.formSection === 3 ? 'Finalizar' : 'Confirmar dados'}</ConfirmarStyles>
     )
 }

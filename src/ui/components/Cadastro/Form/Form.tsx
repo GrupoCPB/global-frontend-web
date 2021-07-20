@@ -2,14 +2,21 @@ import { FormStyles } from './FormStyles.styles';
 import { useState } from 'react';
 import { styled } from '@material-ui/core';
 import FormTabs from './FormTabs/FormTabs';
+import Slider from './FormSlider/Slider';
+import Confirmar from '../Inputs/BotaoConfirmar/Confirmar';
 import { AcessoComponent, ContatoComponent, InfoGeralComponent, SobreComponent } from './FormSections/FormSections';
 
 const Wrapper = styled('div')`
     width: 65%;
     margin: auto;
+    height: auto;
     box-shadow: 10 10px 10px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
+    align-content: center;
+    background-color: white;
+    border-radius: 0 0 6px 6px;
+    padding-bottom: 50px;
 `;
 
 export default function Form() {
@@ -17,47 +24,42 @@ export default function Form() {
         formSection: 0
     })
 
-    function changeSectionByTab(ev) {
-        let id = (ev.target.id).slice(3, 4)
-        setState({
-            formSection: id
-        })
-
-        let tabs = Array.from(document.querySelectorAll('.tab'));
-
-        tabs.find(el => {
-            if (el.classList.contains('active')) {
-                el.classList.remove('active')
-            }
-        })
-
-        ev.target.classList.add('active')   
-
-        console.log(tabs.find(el => el.classList.contains('active')))
-    }
-
     function confirmData() {
         //checar os inputs da sessao, passar para o state se todos estiverem corretos. Se estiver tudo ok, chamar "goNextSection".
     }
 
-    function goNextSection() {
+    function goToFirstSection() {
         setState({
-            formSection: state.formSection + 1
+            formSection: 0
         })
+
+        document.getElementById('section0').scrollIntoView({ block: 'center', inline: 'center' })
     }
 
+    function goNextSection(ev) {
+        ev.preventDefault();
+        let sections = ['section0', 'section1', 'section2', 'section3'].map(el => document.getElementById(el));
 
-    return(
+        setState({
+            formSection: state.formSection === 3 ? 3 : state.formSection + 1
+        })
+
+        sections[state.formSection === 3 ? 3 : state.formSection + 1].scrollIntoView({ block: 'center', inline: 'center' })
+    }
+
+    return (
         <Wrapper>
-            <FormTabs changeSectionByTab={changeSectionByTab}/>
+            <FormTabs goToFirstSection={goToFirstSection} formSection={state.formSection}/>
             <FormStyles>
-                {
-                    [<AcessoComponent key={0} section={0}/>, 
-                    <InfoGeralComponent key={1} section={1}/>, 
-                    <SobreComponent key={2} section={2}/>, 
-                    <ContatoComponent key={3} section={3}/>][state.formSection]
-                }
+                <AcessoComponent key={0} goNext={goNextSection} section={0} />
+                <InfoGeralComponent key={1} section={1} />
+                <SobreComponent key={2} section={2} />
+                <ContatoComponent key={3} section={3} />
             </FormStyles>
+            <div id='confirm_slide'>
+                <Confirmar formSection={state.formSection} goNext={goNextSection} confirmData={confirmData}/>
+                <Slider formSection={state.formSection}/>
+            </div>
         </Wrapper>
     )
 }
