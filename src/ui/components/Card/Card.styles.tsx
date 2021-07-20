@@ -8,7 +8,6 @@ export const CardWrapper = styled(Card)`
   height: 217px;
   box-shadow: 0px 6.81305px 11.9228px rgba(0, 0, 0, 0.2);
   margin-bottom: 19px;
-
   ${({ theme }) => theme.breakpoints.down('sm')} {
     margin-right: 15px;
   }

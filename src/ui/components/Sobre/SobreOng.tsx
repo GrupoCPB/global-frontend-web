@@ -28,9 +28,9 @@ export default function SobreOng() {
           <h2>Se interessou?</h2>
 
           <p>
-            Cadastre‌ ‌a‌ ‌sua‌ ‌ONG‌ ‌na‌ ‌nossa‌ ‌plataforma‌ ‌e‌ ‌alcance‌ voluntários‌ ‌do‌ ‌mundo‌ ‌todo.‌ ‌
-            A‌ ‌Global‌ ORG‌ ‌também‌ oferece‌ ‌uma‌ ‌série‌ ‌de‌ ‌ferramentas‌ ‌de‌ ‌gerenciamento‌ para‌ ‌
-            a‌ ‌sua‌ ‌ONG!‌
+            Cadastre sua ONG na nossa plataforma e alcance voluntários do mundo todo. 
+            A Global ORG também oferece uma série de ferramentas de gerenciamento para 
+            a sua ONG!
           </p>
 
           <ButtonCadastro variant="contained">Cadastre sua ONG</ButtonCadastro>

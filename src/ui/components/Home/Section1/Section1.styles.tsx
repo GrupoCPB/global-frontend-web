@@ -34,11 +34,9 @@ export const ButtonCadastro = styled(Button)`
     border-radius: 6.86169px;
     margin-right: 17px;
     margin-top: 20px ;
-
     &:hover{
         background-color:  ${({ theme }) => theme.palette.grey[400]};;
     }
-
     ${({ theme }) => theme.breakpoints.down('md')}{
         width: 100%;
      }

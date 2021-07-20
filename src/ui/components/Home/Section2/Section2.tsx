@@ -1,3 +1,4 @@
+  
 import React from 'react';
 import { BodySection, GroupCard, ContainerFloat } from './Section2.styles';
 import CardButton from '../../Card/CardButton';

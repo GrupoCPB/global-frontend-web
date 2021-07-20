@@ -12,7 +12,6 @@ import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles';
 function Section2a() {
   return (
     <BodySection>
-
       <ContainerSction>
 
         <div>
