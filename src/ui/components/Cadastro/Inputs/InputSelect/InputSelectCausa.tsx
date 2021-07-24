@@ -4,7 +4,7 @@ export default function SelectCausa() {
     return(
         <SelectStyled>
             <span>Causa</span>
-            <select>
+            <select id='selectCausa'>
                 <option>Causa 1</option>
                 <option>Causa 2</option>
                 <option>Causa 3</option>

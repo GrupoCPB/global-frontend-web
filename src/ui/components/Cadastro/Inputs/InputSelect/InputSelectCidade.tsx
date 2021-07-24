@@ -30,7 +30,7 @@ export default function SelectEstados(props: SelectProps) {
     return(
         <SelectStyled>
             <span>{props.label}</span>
-            <select>
+            <select id='selectCidade'>
             {state.cidades.map(el => {
                 return (
                     <option key={el.id} id={el.id} value={el.id}>{el.nome}</option>

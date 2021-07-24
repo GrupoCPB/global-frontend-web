@@ -45,7 +45,7 @@ export function InfoGeralComponent(props) {
             <div id='section1_form' className='form'>
                 <div id='cima'>
                     <div id='cima1'>
-                        <InputPadrao type='text' label='Nome' required icon={true} input_id='nome' maxLength='100'/>
+                        <InputPadrao section='section1' type='text' label='Nome' required icon={true} input_id='nome' maxLength='100'/>
                         <InputPadrao type='text' label='CNPJ' icon={true} input_id='cnpj'/>
                         <InputPadrao type='text' label='Telefone para contato' icon={true} input_id='telefone'/>
                     </div>
@@ -80,12 +80,12 @@ export function SobreComponent(props) {
             <h2>Só mais alguns dados...</h2>
             <div id='section2_form' className='form'>
                 <div>
-                    <InputPadrao icon={true} label='Endereço:' required maxLength='120' input_id='endereco'/>
+                    <InputPadrao section='section2' icon={true} label='Endereço:' required maxLength='120' input_id='endereco'/>
                 </div>
 
                 <div id='section2selects'>
                     <div>
-                        <InputPadrao icon={true} type='text' input_id='cep' label='CEP:' required maxLength='8'/>
+                        <InputPadrao section='section2' icon={true} type='text' input_id='cep' label='CEP:' required maxLength='8'/>
                         <span></span>
                         <SelectCidades label='Cidade' estado_id={state.estado_id}/>
                     </div>
@@ -108,8 +108,8 @@ export function ContatoComponent(props) {
 
             <div id='section3_form' className='form'>
                 <div>
-                    <InputPadrao icon={true} input_id='site' label='Site da ONG/projeto:' maxLength='100' required type='url' />
-                    <InputPadrao icon={true} input_id='email' label='E-mail:' maxLength='100' required type='email' />
+                    <InputPadrao section='section1' icon={true} input_id='site' label='Site da ONG/projeto:' maxLength='100' required type='url' />
+                    <InputPadrao section='section1' icon={true} input_id='email' label='E-mail:' maxLength='100' required type='email' />
                 </div>
                 <div id='selects'>
                     <div>

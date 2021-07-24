@@ -11,7 +11,7 @@ export default function InputFoto(props) {
         <FotoLabel>
             <span>{props.required ? '*' : ''}{props.label}</span>
             <div id='img_display'></div>
-            <input type='file' id='hiddenFileInput' style={{ display: "none" }} ></input>
+            <input required className='section1' type='file' id='hiddenFileInput' style={{ display: "none" }} ></input>
             <button id='foto_input_button' onClick={selectFile}>Escolher foto</button>
         </FotoLabel>
     )

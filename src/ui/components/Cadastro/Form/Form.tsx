@@ -21,15 +21,59 @@ const Wrapper = styled('div')`
 
 export default function Form() {
     const [state, setState] = useState({
-        formSection: 0
+        formSection: 0,
+        formData: {
+            nome: null,
+            cnpj: null,
+            telefone: null,
+            resumo: null,
+            foto: null,
+            endereco: null,
+            cep: null,
+            estado: null,
+            cidade: null,
+            causa: null,
+            site: null,
+            email: null,
+            redesocial1: [null, null],
+            redesocial2: [null, null]
+        }
     })
 
     function confirmData() {
-        //checar os inputs da sessao, passar para o state se todos estiverem corretos. Se estiver tudo ok, chamar "goNextSection".
+        let regexes = {
+            nome: /([a-ã-]| )+/gi,
+            cnpj: /\d{14}/,
+            telefone: /\d{11}/,
+            cep: /\d{8}/,
+        };
+
+        let todosInputs = Array.from(document.querySelectorAll('#form input, select, textarea'))
+
+        let inputsObrigatorios = Array.from(document.querySelectorAll('input[required]'));
+
+        let inputObrigatorioVazio = inputsObrigatorios.find(el => {
+            if ((el as HTMLInputElement).value === '') {
+                return el
+            }
+        })
+
+        if (inputObrigatorioVazio) {
+            setState({
+                ...state,
+                formSection: Number(inputObrigatorioVazio.className.slice(7, 8))
+            })
+    
+            document.getElementById(`${inputObrigatorioVazio.className}`).scrollIntoView({ block: 'center', inline: 'center' }) //scroll ate o input invalido
+        }
+
+        //falta checar os inputs com os regex antes de envia-los para o state
+
     }
 
     function goToFirstSection() {
         setState({
+            ...state,
             formSection: 0
         })
 
@@ -41,6 +85,7 @@ export default function Form() {
         let sections = ['section0', 'section1', 'section2', 'section3'].map(el => document.getElementById(el));
 
         setState({
+            ...state,
             formSection: state.formSection === 3 ? 3 : state.formSection + 1
         })
 
@@ -50,7 +95,7 @@ export default function Form() {
     return (
         <Wrapper>
             <FormTabs goToFirstSection={goToFirstSection} formSection={state.formSection}/>
-            <FormStyles>
+            <FormStyles id='form'>
                 <AcessoComponent key={0} goNext={goNextSection} section={0} />
                 <InfoGeralComponent key={1} section={1} />
                 <SobreComponent key={2} section={2} />
