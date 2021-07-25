@@ -26,12 +26,12 @@ export default function Form() {
             nome: null,
             cnpj: null,
             telefone: null,
-            resumo: null,
             foto: null,
+            resumo: null,
             endereco: null,
             cep: null,
-            estado: null,
             cidade: null,
+            estado: null,
             causa: null,
             site: null,
             email: null,
@@ -41,13 +41,6 @@ export default function Form() {
     })
 
     function confirmData() {
-        let regexes = {
-            nome: /([a-ã-]| )+/gi,
-            cnpj: /\d{14}/,
-            telefone: /\d{11}/,
-            cep: /\d{8}/,
-        };
-
         let todosInputs = Array.from(document.querySelectorAll('#form input, select, textarea'))
 
         let inputsObrigatorios = Array.from(document.querySelectorAll('input[required]'));
@@ -58,15 +51,41 @@ export default function Form() {
             }
         })
 
-        if (inputObrigatorioVazio) {
-            setState({
-                ...state,
-                formSection: Number(inputObrigatorioVazio.className.slice(7, 8))
-            })
-    
-            document.getElementById(`${inputObrigatorioVazio.className}`).scrollIntoView({ block: 'center', inline: 'center' }) //scroll ate o input invalido
-        }
+        todosInputs.forEach((el:HTMLInputElement) => {
+            if (el.validity.patternMismatch) {
+                console.log(el)
+            }
+        })
 
+        // if (inputObrigatorioVazio) {
+        //     console.log('vazio')
+        //     setState({
+        //         ...state,
+        //         formSection: Number(inputObrigatorioVazio.className.slice(7, 8))
+        //     })
+    
+        //     document.getElementById(`${inputObrigatorioVazio.className}`).scrollIntoView({ block: 'center', inline: 'center' }) //scroll ate o input invalido
+        // } else {
+        //     setState({
+        //         ...state,
+        //         formData: {
+        //             nome: (todosInputs[0] as HTMLInputElement).value,
+        //             cnpj: (todosInputs[1] as HTMLInputElement).value,
+        //             telefone: (todosInputs[2] as HTMLInputElement).value,
+        //             foto: (todosInputs[3] as HTMLInputElement).value,
+        //             resumo: (todosInputs[4] as HTMLInputElement).value,
+        //             endereco: (todosInputs[5] as HTMLInputElement).value,
+        //             cep: (todosInputs[6] as HTMLInputElement).value,
+        //             cidade: (todosInputs[7] as HTMLInputElement).value,
+        //             estado: (todosInputs[8] as HTMLInputElement).value,
+        //             causa: (todosInputs[9] as HTMLInputElement).value,
+        //             site: (todosInputs[10] as HTMLInputElement).value,
+        //             email: (todosInputs[11] as HTMLInputElement).value,
+        //             redesocial1: [(todosInputs[12] as HTMLInputElement).value, (todosInputs[13] as HTMLInputElement).value],
+        //             redesocial2: [(todosInputs[14] as HTMLInputElement).value, (todosInputs[15] as HTMLInputElement).value]
+        //         }
+        //     })
+        // }
         //falta checar os inputs com os regex antes de envia-los para o state
 
     }
