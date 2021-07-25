@@ -108,8 +108,8 @@ export function ContatoComponent(props) {
 
             <div id='section3_form' className='form'>
                 <div>
-                    <InputPadrao section='section1' icon={true} input_id='site' label='Site da ONG/projeto:' maxLength='100' required type='url' />
-                    <InputPadrao section='section1' icon={true} input_id='email' label='E-mail:' maxLength='100' required type='email' />
+                    <InputPadrao section='section3' icon={true} input_id='site' label='Site da ONG/projeto:' maxLength='100' required type='url' />
+                    <InputPadrao section='section3' icon={true} input_id='email' label='E-mail:' maxLength='100' required type='email' />
                 </div>
                 <div id='selects'>
                     <div>

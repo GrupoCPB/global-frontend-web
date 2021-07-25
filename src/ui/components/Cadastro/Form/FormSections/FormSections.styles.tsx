@@ -39,6 +39,7 @@ export const Acesso = styled(Template)`
     display: flex;
     flex-direction: column;
     height: auto;
+    padding-bottom: 10%;
 
     img {
         width: 60px;

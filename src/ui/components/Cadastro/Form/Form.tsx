@@ -51,21 +51,26 @@ export default function Form() {
             }
         })
 
-        todosInputs.forEach((el:HTMLInputElement) => {
-            if (el.validity.patternMismatch) {
-                console.log(el)
-            }
-        })
+        if (inputObrigatorioVazio) {
+            let sessao = Number(inputObrigatorioVazio.className.slice(7, 8))
+            let form = document.querySelector('#form');
+            let sectWidth = document.querySelector('#wrapper').clientWidth;
 
-        // if (inputObrigatorioVazio) {
-        //     console.log('vazio')
-        //     setState({
-        //         ...state,
-        //         formSection: Number(inputObrigatorioVazio.className.slice(7, 8))
-        //     })
-    
-        //     document.getElementById(`${inputObrigatorioVazio.className}`).scrollIntoView({ block: 'center', inline: 'center' }) //scroll ate o input invalido
-        // } else {
+            setState({
+                ...state,
+                formSection: sessao
+            })
+
+            if (sessao === 1) {
+                form.scrollTo(sectWidth, 0)
+            }
+
+            if (sessao === 2) {
+                form.scrollTo(sectWidth*2, 0)
+            }
+
+            inputObrigatorioVazio.classList.add('invalidInput')
+        }// else {
         //     setState({
         //         ...state,
         //         formData: {
@@ -112,7 +117,7 @@ export default function Form() {
     }
 
     return (
-        <Wrapper>
+        <Wrapper id='wrapper'>
             <FormTabs goToFirstSection={goToFirstSection} formSection={state.formSection}/>
             <FormStyles id='form'>
                 <AcessoComponent key={0} goNext={goNextSection} section={0} />
