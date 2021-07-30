@@ -41,18 +41,5 @@ export const LabelPadrao = styled('label')`
         input, textarea {
             padding-left: 40px;
         }
-
-        @keyframes ola {
-            0% {
-                border: solid 1px red;
-            }
-            100% {
-                border: solid 1px black;
-            }
-        }
-
-        .invalidInput {
-            animation: ola 3s;
-        }
     }
 `

@@ -6,6 +6,8 @@ export const FotoLabel = styled('label')`
     flex-direction: column;
     text-align: center;
     align-content: right;
+
+
     
     span {
         margin-top: 15px;
@@ -15,14 +17,19 @@ export const FotoLabel = styled('label')`
 
     #img_display {
         display: block;
+        max-width: 150px;
+        max-height: 140px;
         width: 100%;
         height: 60%;
         margin: 0 auto;
-        background: #FFFFFF;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
         border: 1px solid #000000;
         box-sizing: border-box;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 6px;
+        
     }
 
     button {
@@ -35,5 +42,23 @@ export const FotoLabel = styled('label')`
         color: #520B31;
         font-weight: 500;
 
+    }
+
+    @keyframes warning {
+        0% {
+            border: solid 3px red;
+        }
+
+        90% {
+            border: solid 3px red;
+        }
+
+        100% {
+            border solid 1px black;
+        }
+    }
+
+    .invalidInput {
+        animation: warning 7s ease;
     }
 `

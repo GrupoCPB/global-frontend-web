@@ -10,10 +10,6 @@ import { Acesso, Contato, InfoGeral, Sobre } from "./FormSections.styles";
 
 
 export function AcessoComponent(props) {
-    function start() {
-        document.getElementById('section1').scrollIntoView({ block: 'center', inline: 'center' })
-    }
-
     return (
         <Acesso id='section0' className='section'>
             <img src='/img/logo.png'></img>
@@ -45,20 +41,20 @@ export function InfoGeralComponent(props) {
             <div id='section1_form' className='form'>
                 <div id='cima'>
                     <div id='cima1'>
-                        <InputPadrao section='section1' type='text' label='Nome' required icon={true} input_id='nome' maxLength='100'/>
-                        <InputPadrao type='text' label='CNPJ' icon={true} input_id='cnpj'/>
-                        <InputPadrao type='text' label='Telefone para contato' icon={true} input_id='telefone'/>
+                        <InputPadrao initialValidityValue={false} section='section1' type='text' label='Nome' required icon={true} input_id='nome' maxLength='100'/>
+                        <InputPadrao initialValidityValue={true} section='section1' type='text' label='CNPJ' icon={true} input_id='cnpj'/>
+                        <InputPadrao initialValidityValue={true} section='section1' type='text' label='Telefone para contato' icon={true} input_id='telefone'/>
                     </div>
 
                     <span></span>{/*para funcionar as colunas no css*/}
 
                     <div id='cima2'>
-                        <InputFoto label='Foto da ONG:' input_id='foto' required/>
+                        <InputFoto initialValidityValue={false} label='Foto da ONG:' input_id='foto' required/>
                     </div>
                 </div>
 
                 <div id='baixo'>
-                    <InputPadrao textField={true} label='Resumo' icon={true} maxLength='500' input_id='resumo'/>
+                    <InputPadrao initialValidityValue={true} textField={true} label='Resumo' icon={true} maxLength='500' input_id='resumo'/>
                 </div>
                 <span id='warning'style={{color: "rgba(64, 64, 64, 1)", fontSize: 12, }}>Todos os campos marcados com * são obrigatórios.</span>
             </div>
@@ -80,19 +76,19 @@ export function SobreComponent(props) {
             <h2>Só mais alguns dados...</h2>
             <div id='section2_form' className='form'>
                 <div>
-                    <InputPadrao section='section2' icon={true} label='Endereço:' required maxLength='120' input_id='endereco'/>
+                    <InputPadrao initialValidityValue={false} section='section2' icon={true} label='Endereço:' required maxLength='120' input_id='endereco'/>
                 </div>
 
                 <div id='section2selects'>
                     <div>
-                        <InputPadrao section='section2' icon={true} type='text' input_id='cep' label='CEP:' required maxLength='8'/>
+                        <InputPadrao initialValidityValue={false} section='section2' icon={true} type='text' input_id='cep' label='CEP:' required maxLength='8'/>
                         <span></span>
                         <SelectCidades label='Cidade' estado_id={state.estado_id}/>
                     </div>
                     <div>
                         <SelectEstados label='Estado' setEstado={setEstado}/>
                         <span></span>
-                        <SelectCausa/>
+                        <SelectCausa />
                     </div>
                 </div>
                 <span id='warning'style={{color: "rgba(64, 64, 64, 1)", fontSize: 12, }}>Todos os campos marcados com * são obrigatórios.</span>
@@ -108,22 +104,22 @@ export function ContatoComponent(props) {
 
             <div id='section3_form' className='form'>
                 <div>
-                    <InputPadrao section='section3' icon={true} input_id='site' label='Site da ONG/projeto:' maxLength='100' required type='url' />
-                    <InputPadrao section='section3' icon={true} input_id='email' label='E-mail:' maxLength='100' required type='email' />
+                    <InputPadrao initialValidityValue={false} section='section3' icon={true} input_id='site' label='Site da ONG/projeto:' maxLength='100' required type='url' />
+                    <InputPadrao initialValidityValue={false} section='section3' icon={true} input_id='email' label='E-mail:' maxLength='100' required type='email' />
                 </div>
                 <div id='selects'>
                     <div>
-                        <SelectSocialMedia/>
+                        <SelectSocialMedia />
                         <span></span>
-                        <InputPadrao icon={false} input_id='link1' label='Link:' maxLength='100' type='url' />
+                        <InputPadrao  icon={false} input_id='link1' section='section3' label='Link:' maxLength='100' type='url' />
                     </div>
                     <div>
-                        <SelectSocialMedia/>
+                        <SelectSocialMedia />
                         <span></span>
-                        <InputPadrao icon={false} input_id='link2' label='Link:' maxLength='100' type='url' />
+                        <InputPadrao icon={false} input_id='link2' section='section3' label='Link:' maxLength='100' type='url' />
                     </div>
                 </div>
-                <span id='warning'style={{color: "rgba(64, 64, 64, 1)", fontSize: 12, }}>Todos os campos marcados com * são obrigatórios.</span>
+                <span id='warning' style={{color: "rgba(64, 64, 64, 1)", fontSize: 12, }}>Todos os campos marcados com * são obrigatórios.</span>
             </div>
         </Contato>
     )

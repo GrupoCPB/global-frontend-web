@@ -17,9 +17,14 @@ const Wrapper = styled('div')`
     background-color: white;
     border-radius: 0 0 6px 6px;
     padding-bottom: 50px;
+
+    .invalidInput {
+        border: solid 3px red;
+        outline: none;
+    }
 `;
 
-export default function Form() {
+export default function Form({ children }) {
     const [state, setState] = useState({
         formSection: 0,
         formData: {
@@ -37,40 +42,53 @@ export default function Form() {
             email: null,
             redesocial1: [null, null],
             redesocial2: [null, null]
-        }
-    })
-
-    function confirmData() {
-        let todosInputs = Array.from(document.querySelectorAll('#form input, select, textarea'))
-
-        let inputsObrigatorios = Array.from(document.querySelectorAll('input[required]'));
-
-        let inputObrigatorioVazio = inputsObrigatorios.find(el => {
+        },
+        form: () => document.querySelector('#form'),
+        sectWidth: () => document.querySelector('#wrapper').clientWidth,
+        todosInputs: () => Array.from(document.querySelectorAll('#form input, select, textarea')),
+        inputsObrigatorios: () => Array.from(document.querySelectorAll('input[required]')),
+        inputObrigatorioVazio: () => state.inputsObrigatorios().find(el => {
             if ((el as HTMLInputElement).value === '') {
                 return el
             }
+        }),
+        sessaoDoInputObrigatorioVazio: () => Number(state.inputObrigatorioVazio().className.slice(7, 8)),
+        validityState: {
+            
+        }
+    })
+
+    function scrollToInvalidInput(section, inputInvalido = state.inputObrigatorioVazio()) {
+        setState({
+            ...state,
+            formSection: section
         })
 
-        if (inputObrigatorioVazio) {
-            let sessao = Number(inputObrigatorioVazio.className.slice(7, 8))
-            let form = document.querySelector('#form');
-            let sectWidth = document.querySelector('#wrapper').clientWidth;
+        state.form().scrollTo(state.sectWidth()*section, 0)
 
-            setState({
-                ...state,
-                formSection: sessao
-            })
+        //se o input vazio for o da imagem
+        if (inputInvalido.id === 'hiddenFileInput') {
+            document.querySelector('#img_display').classList.add('invalidInput');
+        }
+    }
 
-            if (sessao === 1) {
-                form.scrollTo(sectWidth, 0)
+    function confirmData() {
+        let anyInvalid = state.todosInputs().find((el:HTMLInputElement) => {
+            if (el.classList.contains('invalidInput') || (el.value === '' && el.required)) {
+                return el
+            } else {
+                return false
             }
+        });
 
-            if (sessao === 2) {
-                form.scrollTo(sectWidth*2, 0)
-            }
+        let section = Number(anyInvalid.className.slice(7, 8));
 
-            inputObrigatorioVazio.classList.add('invalidInput')
-        }// else {
+        if (anyInvalid) {
+            scrollToInvalidInput(section, anyInvalid)
+        } else {
+            //aqui vai o código caso nenhum input esteja inválido
+        }
+        
         //     setState({
         //         ...state,
         //         formData: {
@@ -101,19 +119,18 @@ export default function Form() {
             formSection: 0
         })
 
-        document.getElementById('section0').scrollIntoView({ block: 'center', inline: 'center' })
+        state.form().scrollTo(0, 0)
     }
 
     function goNextSection(ev) {
         ev.preventDefault();
-        let sections = ['section0', 'section1', 'section2', 'section3'].map(el => document.getElementById(el));
 
         setState({
             ...state,
             formSection: state.formSection === 3 ? 3 : state.formSection + 1
         })
 
-        sections[state.formSection === 3 ? 3 : state.formSection + 1].scrollIntoView({ block: 'center', inline: 'center' })
+        state.form().scrollTo(state.sectWidth() * (state.formSection === 3 ? 3 : state.formSection + 1), 0)
     }
 
     return (
