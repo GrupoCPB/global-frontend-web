@@ -2,6 +2,6 @@ import { styled } from '@material-ui/core';
 
 export const FormStyles = styled('form')`
     display: flex;
-    overflow: hidden;
+    overflow-x: hidden;
     scroll-behavior: smooth !important;
 `

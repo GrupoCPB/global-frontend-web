@@ -1,11 +1,10 @@
 import { styled } from '@material-ui/core';
 
-const Template = styled('div')`
+export const Template = styled('div')`
     width: 100%;
     background: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-content: center;
     flex: none;
     position: relative;
@@ -18,14 +17,13 @@ const Template = styled('div')`
         line-height: 35px;
         text-align: center;
         padding: 45px 0 0 0;
-        margin: 0;
+        margin: 0 0 -150px 0;
     }
 
     .form {
         width: 60%;
-        height: auto;
         margin: auto;
-
+        
     }
 
     button {
@@ -38,13 +36,12 @@ export const Acesso = styled(Template)`
     text-align: center;
     display: flex;
     flex-direction: column;
-    height: auto;
     padding-bottom: 10%;
 
-    img {
+    #global_logo {
         width: 60px;
         display: block;
-        margin: 30px auto 15px auto;
+        margin: 60px auto 5px auto;
     }
 
     h2, p {
@@ -72,6 +69,7 @@ export const Acesso = styled(Template)`
 
 
         img {
+            width: 60px;
             flex-shrink: 1;
             display: inline;
             margin: 0;

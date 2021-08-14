@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { LabelPadrao } from './InputPadrao.styles';
 
@@ -15,7 +15,7 @@ type InputProps = {
     initialValidityValue?: boolean
 }
 
-export default function InputPadrao(props: InputProps) {
+export default function InputPadrao(props:InputProps) {
     const [state, setState] = useState({
         valid: props.initialValidityValue
     })

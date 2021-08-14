@@ -9,10 +9,6 @@ type BotaoConfirmar = {
 }
 
 export default function Confirmar(props: BotaoConfirmar) {
-    if (props.formSection === 0) {
-        return null
-    }
-    
     return (
         <ConfirmarStyles 
             type='button' 

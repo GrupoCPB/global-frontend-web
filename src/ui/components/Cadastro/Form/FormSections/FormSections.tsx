@@ -12,7 +12,7 @@ import { Acesso, Contato, InfoGeral, Sobre } from "./FormSections.styles";
 export function AcessoComponent(props) {
     return (
         <Acesso id='section0' className='section'>
-            <img src='/img/logo.png'></img>
+            <img id='global_logo' src='/img/logo.png'></img>
             <h2>Crie uma conta na Global ORG para sua ONG ou Empresa</h2>
             <p>Divulgue suas vagas de voluntariado, tenha acesso às nossas ferramentas de gestão e faça parte da comunidade Global ORG</p>
 
