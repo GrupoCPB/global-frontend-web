@@ -1,38 +1,37 @@
-import React from 'react'
-import { HeaderAppBar, HeaderLogo, SecondaryAppBar, InputBusca, SocialMedias } from './Header.styles';
-import { Toolbar } from '@material-ui/core'
+import React from 'react';
+import {
+  HeaderAppBar,
+  HeaderLogo,
+  SecondaryAppBar,
+  InputBusca,
+  SocialMedias,
+} from './Header.styles';
+
 
 function Header() {
-    return (
+  return (
         <>
-            <HeaderAppBar position={'relative'}>
+          <HeaderAppBar position={'relative'}>
 
-                <HeaderLogo src={'/img/logo.png'} alt={'Globall org'} />
+          <HeaderLogo src={'/img/logo.png'} alt={'Globall org'} />
 
-
-                <InputBusca placeholder="Busque vagas de voluntariado ou ONGs" />
-
-                <SocialMedias>
-                    <a href="#"><img src={'/icons/YouTube.png'} alt=""></img></a>
-                    <a href="#"><img src={'/icons/LinkedIn.png'} alt=""></img></a>
-                    <a href="#"><img src={'/icons/IG.png'} alt=""></img></a>
-                    <a href="#"><img src={'/icons/WPP.png'} alt=""></img></a>
-                    <a href="#"><img src={'/icons/FB.png'} alt=""></img></a>
-                    <a href="#"><img src={'/icons/Twitter.png'} alt=""></img></a>
-                    
-                </SocialMedias>
-            </HeaderAppBar>
-            <SecondaryAppBar position={'relative'} >
-                <a> Para empresas  </a>
-
-                <a> Sou um projeto  </a>
-
-                <a> Entrar </a>
-
-                <a> Ajudar  </a>
-            </SecondaryAppBar>
-        </>
-    )
+          <SocialMedias>
+            <a href="#"><img src="/icons/YouTube.png" alt="" /></a>
+            <a href="#"><img src="/icons/LinkedIn.png" alt="" /></a>
+            <a href="#"><img src="/icons/IG.png" alt="" /></a>
+            <a href="#"><img src="/icons/WPP.png" alt="" /></a>
+            <a href="#"><img src="/icons/FB.png" alt="" /></a>
+            <a href="#"><img src="/icons/Twitter.png" alt="" /></a>
+         </SocialMedias>
+      </HeaderAppBar>
+      <SecondaryAppBar position="relative">
+        <a> Para empresas  </a>
+        <a> Sou um projeto  </a>
+        <a> Entrar </a>
+        <a> Ajudar  </a>
+      </SecondaryAppBar>
+    </>
+  );
 }
 
 export default Header
