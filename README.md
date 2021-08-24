@@ -1,7 +1,5 @@
 Repo front-end Global ORG
 
-Se você é novo aqui, faça uma branch a partir da branch "dev".
-
 Dependências: 
 
 - Next.js
