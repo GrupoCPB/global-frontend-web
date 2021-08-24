@@ -37,6 +37,7 @@ export const Acesso = styled(Template)`
     display: flex;
     flex-direction: column;
     padding-bottom: 10%;
+    border-radius: 0 0 10px 10px;
 
     #global_logo {
         width: 60px;
