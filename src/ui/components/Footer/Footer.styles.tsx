@@ -1,6 +1,14 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 
+const BoxPadrao = styled(Box)`
+    padding: 0 15px;
+
+    @media(max-width: 1000px) {
+        margin: 50px 0;
+    }
+`
+
 export const FooterMUI = styled("footer")`
 
 `
@@ -12,7 +20,12 @@ export const BoxMUI = styled(Box)`
     padding: 100px;
     font-family: Merriweather;
     color: ${({theme}) => theme.palette.text.secondary};
-    column-gap: 50px;
+
+    @media(max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
 
     ul {
         list-style-type: none;
@@ -50,30 +63,48 @@ export const Title = styled("div")`
         margin: 0;
         padding: 0;
         display: inline;
-    }
-`
 
-export const Info = styled(Box)`
-    display: flex;
-    flex-direction: column;
+        @media(max-width: 1000px) {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+    }
 
     img {
         width: 32px;
         height: 32px;
         margin-right: 10px;
         display: inline;
+
+        @media(max-width: 1000px) {
+            :first-of-type {
+                margin-right: -30px;
+            }
+        }
     }
 `
 
-export const Contato = styled(Box)`
+export const Info = styled(BoxPadrao)`
+    display: flex;
+    flex-direction: column;
+
+    a {
+        margin: 0 6px;
+    }
 
 `
 
-export const Nav = styled(Box)`
+export const Contato = styled(BoxPadrao)`
 
 `
 
-export const News = styled(Box)`
+export const Nav = styled(BoxPadrao)`
+
+`
+
+export const News = styled(BoxPadrao)`
     form {
         input {
             margin: 5px 0;
@@ -87,7 +118,8 @@ export const News = styled(Box)`
         button {
             width: 178px;
             height: 40px;
-            padding: 5px 2px;background: #7A0E48;
+            padding: 5px 2px;
+            background: #7A0E48;
             border: none;
             box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.2);
             border-radius: 8px;
@@ -112,7 +144,7 @@ export const LowerSocialMedia = styled("div")`
 
 export const LowerBar = styled("div")`
     background: ${({theme}) => theme.palette.primary.dark};
-    height: 78px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -122,5 +154,15 @@ export const LowerBar = styled("div")`
         font-weight: 500;
         color: white;
         margin: 0 95px;
+    }
+
+    @media(max-width: 1000px) {
+        flex-direction: column;
+        text-align: center;
+
+        span {
+            margin: 10px 0;
+            text-align: center;
+        }
     }
 `
