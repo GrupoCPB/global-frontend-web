@@ -14,19 +14,23 @@ export const CardWrapper = styled(Card)`
 `;
 
 export const CardAction = styled(CardActionArea)`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 80% 20%;
   height: 100%;
   width: 100%;
-  justify-content: flex-end;
-  align-items: center;
+
+  img {
+    max-width: 200px;
+  }
+
+  img[alt='HABILIDADES.svg'] {
+    width: 80%;
+    margin: auto;
+  }
 `;
 
 export const TitleBox = styled(Typography)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
+  text-align: center;
   height: 60px;
 `;
 

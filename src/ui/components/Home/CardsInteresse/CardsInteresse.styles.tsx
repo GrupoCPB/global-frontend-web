@@ -1,5 +1,6 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Button, Container } from '@material-ui/core';
+import theme from '../../../themes/theme';
 
 export const BodySection = styled('div')`
   background-color: ${({ theme }) => theme.palette.background.paper};
@@ -32,6 +33,7 @@ export const ButtonCadastro = styled(Button)`
   border-radius: 6.86169px;
   margin-right: 17px;
   margin-top: 20px;
+
   ${({ theme }) => theme.breakpoints.down('md')} {
     width: 100%;
   }
@@ -41,15 +43,16 @@ export const GroupCard = styled(Container)`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-content: center;
   align-items: center;
-   flex-wrap: wrap;
-   ${({ theme }) => theme.breakpoints.down('sm')} {
+  flex-wrap: wrap;
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
+    flex-wrap: wrap;
   }
 `;
 
@@ -65,9 +68,13 @@ export const ContainerFloat = styled(Container)`
     font-size: 36px;
     text-align: center;
   }
-   ${({ theme }) => theme.breakpoints.down('sm')} {
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+     top: -120px;
+
      h1 {
-    font-size: 18px;
+      color: ${theme.palette.primary.dark}
+      font-size: 18px;
      }
   }
 `;

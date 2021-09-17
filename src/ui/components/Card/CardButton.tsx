@@ -12,7 +12,7 @@ type CardProps = {
 const CardButton = ({ imgName, title, subTitle = '' }: CardProps) => (
   <CardWrapper>
     <CardAction>
-      <img src={`img/home/${imgName}`} alt="" />
+      <img src={`img/home/${imgName}`} alt={`${imgName}`} />
       <TitleBox>
         <OptionalTitle>
           {subTitle}

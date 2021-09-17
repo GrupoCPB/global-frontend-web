@@ -1,12 +1,12 @@
 import React from 'react';
 import SobreOng from '../ui/components/Sobre/SobreOng';
-import Section2 from '../ui/components/Home/Section2/Section2';
+import CardsInteresse from '../ui/components/Home/CardsInteresse/CardsInteresse';
 
 function sobreNos() {
   return (
     <>
       <SobreOng />
-      <Section2 />
+      <CardsInteresse />
     </>
   );
 }
