@@ -106,6 +106,8 @@ export const Nav = styled(BoxPadrao)`
 
 export const News = styled(BoxPadrao)`
     form {
+        max-width: 300px;
+        margin: auto;
         input {
             margin: 5px 0;
             font-size: 14px;
