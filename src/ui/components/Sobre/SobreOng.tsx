@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Apresentacao,
   ImgApresentation,
-} from '../../styles/Public.styles';
+} from '../../globalComponentStyles/Public.styles';
 
 import {
   BodySection,

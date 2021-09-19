@@ -5,7 +5,7 @@ import {
     ButtonCadastro
 } from './Section1.styles'
 
-import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles'
+import { Apresentacao, ImgApresentation } from '../../../globalComponentStyles/Public.styles';
 
 
 function section1() {

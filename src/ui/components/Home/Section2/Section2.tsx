@@ -6,10 +6,10 @@ import {
   ButtonCadastro,
 } from './Section2.styles';
 
-import { Apresentacao, ImgApresentation } from '../../../styles/Public.styles';
+import { Apresentacao, ImgApresentation } from '../../../globalComponentStyles/Public.styles';
 // eslint-disable-next-line import/extensions
 
-function Section2a() {
+function Section2() {
   return (
     <BodySection>
       <ContainerSction>
@@ -19,7 +19,6 @@ function Section2a() {
         </div>
 
         <Apresentacao>
-
           <h1> Faça parte da nossa rede </h1>
 
           <p>
@@ -29,7 +28,6 @@ function Section2a() {
           <ButtonCadastro variant="contained" endIcon={<ArrowForwardIcon />}>
             Cadastre sua vaga aqui
           </ButtonCadastro>
-
         </Apresentacao>
 
       </ContainerSction>
@@ -37,4 +35,4 @@ function Section2a() {
   );
 }
 
-export default Section2a;
+export default Section2;
