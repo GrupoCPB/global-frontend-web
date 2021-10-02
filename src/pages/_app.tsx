@@ -2,8 +2,8 @@ import '../styles/globals.css'
 import { ThemeProvider } from '@material-ui/core';
 import Head from 'next/head';
 import theme from '../ui/themes/theme';
-import Header from '../ui/components/Header/Header';
-import Footer from '../ui/components/Footer/Footer';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -5,7 +5,7 @@ import {
     ButtonCadastro
 } from './Section1.styles'
 
-import { Apresentacao, ImgApresentation } from '../../../globalComponentStyles/Public.styles';
+import { Apresentacao, ImgApresentation } from '../../../ui/globalComponentStyles/Public.styles';
 
 
 function section1() {
@@ -17,8 +17,8 @@ function section1() {
                     <h1> Conheça a Global ORG </h1>
 
                     <p>
-                        A GLOBAL ORG  faz parte do Conselho do Povo Brasileiro (CPB), 
-                        organização que promove cooperação internacional e conecta projetos sociais com empresas, 
+                        A GLOBAL ORG  faz parte do Conselho do Povo Brasileiro (CPB),
+                        organização que promove cooperação internacional e conecta projetos sociais com empresas,
                         voluntários e pessoas que precisam de ajuda pelo mundo.
                     </p>
 
@@ -29,7 +29,7 @@ function section1() {
                     </h2>
 
                     <p>
-                        Cadastre‌ ‌a‌ ‌sua‌ ‌ONG‌ ‌na‌ ‌nossa‌ ‌plataforma‌ ‌e‌ ‌alcance‌ ‌voluntários‌ ‌do‌ ‌mundo‌ ‌todo.‌ 
+                        Cadastre‌ ‌a‌ ‌sua‌ ‌ONG‌ ‌na‌ ‌nossa‌ ‌plataforma‌ ‌e‌ ‌alcance‌ ‌voluntários‌ ‌do‌ ‌mundo‌ ‌todo.‌
                         ‌A‌ ‌Global‌ ORG‌ ‌também‌ ‌oferece‌ ‌uma‌ ‌série‌ ‌de‌ ‌ferramentas‌ ‌de‌ ‌gerenciamento‌ ‌para‌ ‌a‌ ‌sua‌ ‌ONG!‌
                     </p>
 

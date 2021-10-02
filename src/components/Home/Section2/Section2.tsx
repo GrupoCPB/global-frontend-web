@@ -6,7 +6,7 @@ import {
   ButtonCadastro,
 } from './Section2.styles';
 
-import { Apresentacao, ImgApresentation } from '../../../globalComponentStyles/Public.styles';
+import { Apresentacao, ImgApresentation } from '../../../ui/globalComponentStyles/Public.styles';
 // eslint-disable-next-line import/extensions
 
 function Section2() {

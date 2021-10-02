@@ -1,6 +1,6 @@
 import { styled } from '@material-ui/core/styles';
 import Card from './indexContentCard';
-import theme from '../../../themes/theme';
+import theme from '../../../ui/themes/theme';
 
 const imagens = [
     ['/img/causas/educacao.png', 'Educação'],
@@ -25,7 +25,7 @@ const Page = styled('section')`
         padding: 0 0 15px 120px;
         border-bottom: solid 1.3px ${theme.palette.primary.dark};
     }
-    
+
     #cards_section {
         display: flex;
         flex-direction: row;

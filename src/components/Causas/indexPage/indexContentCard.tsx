@@ -1,5 +1,5 @@
 import { styled } from '@material-ui/core/styles';
-import theme from '../../../themes/theme';
+import theme from '../../../ui/themes/theme';
 
 const Wrapper = styled('div')`
     display: grid;
@@ -22,7 +22,7 @@ const Wrapper = styled('div')`
         display: grid;
         place-items: center;
         height: 25px;
-        
+
         p {
             font-size: 18px;
             margin: 0;

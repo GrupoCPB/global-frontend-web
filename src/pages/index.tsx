@@ -1,14 +1,14 @@
 import Head from 'next/head';
-import CardsInteresse from '../ui/components/Home/CardsInteresse/CardsInteresse';
-import Section1 from '../ui/components/Home/Section1/Section1';
-import Section2 from '../ui/components/Home/Section2/Section2';
-import Section3 from '../ui/components/Home/Section3/Section3';
-import Section4 from '../ui/components/Home/Section4/Section4';
-import Section5 from '../ui/components/Home/Section5/Section5';
+import CardsInteresse from '../components/Home/CardsInteresse/CardsInteresse';
+import Section1 from '../components/Home/Section1/Section1';
+import Section2 from '../components/Home/Section2/Section2';
+import Section3 from '../components/Home/Section3/Section3';
+import Section4 from '../components/Home/Section4/Section4';
+import Section5 from '../components/Home/Section5/Section5';
 
 export default function Home() {
   return (
-    <div>   
+    <div>
       <Head>
         <link rel="icon" href="./logo.png" />
         <title>Global Org</title>
@@ -23,7 +23,7 @@ export default function Home() {
         <link rel="apple-touch-startup-image" href="public/android-icon-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)" />
         <link rel="apple-touch-startup-image" href="public/android-icon-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)" />
       </Head>
-      
+
       <Section1 />
       <CardsInteresse />
       <Section2 />

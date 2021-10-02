@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Apresentacao,
   ImgApresentation,
-} from '../../globalComponentStyles/Public.styles';
+} from '../../ui/globalComponentStyles/Public.styles';
 
 import {
   BodySection,
@@ -28,8 +28,8 @@ export default function SobreOng() {
           <h2>Se interessou?</h2>
 
           <p>
-            Cadastre sua ONG na nossa plataforma e alcance voluntários do mundo todo. 
-            A Global ORG também oferece uma série de ferramentas de gerenciamento para 
+            Cadastre sua ONG na nossa plataforma e alcance voluntários do mundo todo.
+            A Global ORG também oferece uma série de ferramentas de gerenciamento para
             a sua ONG!
           </p>
 

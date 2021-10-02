@@ -1,5 +1,5 @@
 import { styled } from '@material-ui/core/styles';
-import theme from '../../../themes/theme';
+import theme from '../../../ui/themes/theme';
 
 const Wrapper = styled('div')`
     background: ${theme.palette.primary.dark};
@@ -28,13 +28,13 @@ const Wrapper = styled('div')`
 export default function TopBanner({titulo}) {
     return(
         <Wrapper>
-           
-                <h1>{titulo}</h1>
-  
 
-          
+                <h1>{titulo}</h1>
+
+
+
                 <img src='/img/causas/girl-icon.png'></img>
-    
+
         </Wrapper>
     )
 }

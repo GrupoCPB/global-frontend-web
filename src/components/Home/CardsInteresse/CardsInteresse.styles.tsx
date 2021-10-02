@@ -1,6 +1,6 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Button, Container } from '@material-ui/core';
-import theme from '../../../themes/theme';
+import theme from '../../../ui/themes/theme';
 
 export const BodySection = styled('div')`
   background-color: ${({ theme }) => theme.palette.background.paper};
@@ -59,7 +59,7 @@ export const GroupCard = styled(Container)`
 export const ContainerFloat = styled(Container)`
   top: -180px;
   position: relative;
- 
+
   h1 {
     color: white;
     font-family: Open Sans;

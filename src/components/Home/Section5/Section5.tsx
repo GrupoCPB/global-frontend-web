@@ -1,6 +1,6 @@
 import React from 'react'
 import { BodySection, ContainerSction, BotaoFerrmentas } from './Section5.styles'
-import { Apresentacao, ImgApresentation } from '../../../globalComponentStyles/Public.styles'
+import { Apresentacao, ImgApresentation } from '../../../ui/globalComponentStyles/Public.styles'
 
 function Section2() {
     return (
