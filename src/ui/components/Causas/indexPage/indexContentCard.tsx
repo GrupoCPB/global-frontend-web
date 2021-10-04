@@ -1,4 +1,5 @@
 import { styled } from '@material-ui/core/styles';
+import Link from 'next/link';
 import theme from '../../../themes/theme';
 
 const Wrapper = styled('div')`
@@ -9,6 +10,7 @@ const Wrapper = styled('div')`
     width: auto;
     height: 250px;
     margin: 20px 10px;
+    cursor: pointer;
 
     img {
         border-top-left-radius: 15px;
@@ -32,10 +34,12 @@ const Wrapper = styled('div')`
     }
 `
 
-export default function Card({src, leg}) {
+export default function Card({src, leg, routeName}) {
     return(
         <Wrapper>
-            <img src={src} />
+            <Link href={`/causas/${routeName}`}>
+                <img src={src} />
+            </Link>
             <span><p>{leg}</p></span>
         </Wrapper>
     )
