@@ -11,7 +11,7 @@ export const HeaderAppBar = styled(AppBar)`
 
 export const HeaderLogo = styled('img')`
     height: 32px;
-    padding-right: 10px;
+    margin-left: 55px;
 `;
 
 export const SocialMedias = styled('div')`
@@ -36,14 +36,31 @@ export const SecondaryAppBar = styled(AppBar)`
     color: ${({ theme }) => theme.palette.primary.dark};
     font-family: 'Open Sans', sans-serif;
     flex-direction: row;
-    height: 35px;
+    min-height: 35px;
     font-weight: 600;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    padding: 6px 0;
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+        padding: 0 25px 0 50px;
+
+        li {
+            display: grid;
+            place-items: center;
+            flex-basis: 100%;
+            white-space: pre;
+        }
+    }
 
     a{
-        padding-right: 25px;
         cursor: pointer;
     }
 

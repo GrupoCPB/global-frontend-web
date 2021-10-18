@@ -2,16 +2,16 @@ import { styled } from '@material-ui/core/styles';
 
 const Title = styled('h1')`
     text-align: center;
-    margin: 50px 0;
+    margin: 50px 0 0;
     font-family: Merriweather;
-
 `;
 
 const Wrapper = styled('div')`
     box-sizing: border-box;
     display: flex;
-    width: 100%;
-    margin: 50px 0px 100px 0px;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin: 0px 0px 100px 0px;
     padding: 0 30px;
 `;
 
@@ -24,7 +24,7 @@ const BasicCard = styled('div')`
     height: 240px;
     width: 240px;
     font-family: Merriweather;
-    margin: auto;
+    margin: 50px auto;
     padding: 10px;
     box-sizing: border-box;
 

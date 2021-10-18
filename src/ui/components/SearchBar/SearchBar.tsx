@@ -1,5 +1,10 @@
-import { SearchBarInput } from './SearchBar.styles';
+import { SearchBarInput, Wrapper } from './SearchBar.styles';
+
 
 export default function SearchBar() {
-    return <SearchBarInput/>      
+    return (
+        <Wrapper>
+            <SearchBarInput placeholder='Busque vagas, ONGs e Empresas'/>
+        </Wrapper>
+    )      
 }

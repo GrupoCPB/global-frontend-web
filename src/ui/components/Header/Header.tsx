@@ -12,11 +12,6 @@ function Header() {
   return (
     <>
       <HeaderAppBar position={'relative'}>
-
-        <HeaderLogo src={'/img/logo.png'} alt={'Globall org'} />
-
-        <SearchBarInput/>
-
         <SocialMedias>
           <a href="#"><img src="/icons/YouTube.png" alt="" /></a>
           <a href="#"><img src="/icons/LinkedIn.png" alt="" /></a>
@@ -28,10 +23,31 @@ function Header() {
       </HeaderAppBar>
 
       <SecondaryAppBar position="relative">
-        <a> Para empresas  </a>
-        <a> Sou um projeto  </a>
-        <a> Entrar </a>
-        <a> Ajudar  </a>
+        <HeaderLogo src={'/img/logo.png'} alt={'Globall org'} />
+        <SearchBarInput />
+        <ul>
+          <li>
+            <a>Home</a>
+          </li>
+          <li>
+            <a>Ajuda a comunidade</a>
+          </li>
+          <li>
+            <a>Doação</a>
+          </li>
+
+          <li>
+            <a>Sou uma causa</a>
+          </li>
+
+          <li>
+            <a>Para empresas</a>
+          </li>
+
+          <li>
+            <a>Contato</a>
+          </li>
+        </ul>
       </SecondaryAppBar>
     </>
   );
