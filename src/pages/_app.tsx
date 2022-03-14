@@ -4,8 +4,12 @@ import Head from 'next/head';
 import theme from '../ui/themes/theme';
 import Header from '../ui/components/Header/Header';
 import Footer from '../ui/components/Footer/Footer';
+import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  let isDonationPath = /\/donation/.test(router.pathname)
+  
   return (
     <>
       <Head>
@@ -16,9 +20,19 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/img/logo.png" />
       </Head>
       <ThemeProvider theme={theme}>
-        <Header />
-          <Component {...pageProps} />
-        <Footer />
+        {
+          isDonationPath ?
+          <p>Em construção...</p> 
+          :
+          <Header />
+        }
+        <Component {...pageProps} />
+        {
+          isDonationPath ?
+          <p>Em construção...</p> 
+          :
+          <Footer />
+        }
       </ThemeProvider>
     </>
   )

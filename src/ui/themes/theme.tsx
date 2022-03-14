@@ -31,7 +31,7 @@ const theme = createTheme({
             200: '#D7D9DD',
             300: '#C4C4C4',
             400: '#9B9B9B',
-        },
+        }
     },
     typography: {
         fontFamily: 'Open Sans',
