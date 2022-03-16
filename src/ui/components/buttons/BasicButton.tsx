@@ -1,13 +1,14 @@
 import { Button, styled } from '@material-ui/core';
+import { MouseEventHandler } from 'react';
 
 type ButtonProps = {
     variant: 'outlined' | 'contained',
     text: String,
-    className?: string
+    className?: string,
+    clickHandler?: MouseEventHandler<HTMLButtonElement>
 }
 
 const StyledButton = styled(Button)(({ theme }) => ({
-
     borderColor: `${theme.palette.secondary.light}`,
     color: `${theme.palette.secondary.light}`,
 
@@ -20,12 +21,17 @@ const StyledButton = styled(Button)(({ theme }) => ({
         background: `${theme.palette.secondary.light}`,
     },
 
+    '&.variant-contained': {
+        background: `${theme.palette.secondary.light}`,
+        color: 'white',
+        fontWeight: '500'
+    }
 }))
 
-export default function BasicButton({ variant, text, className }: ButtonProps) {
+export default function BasicButton({ variant, text, className, clickHandler }: ButtonProps) {
     return (
         <>
-            <StyledButton className={className ? className : ''} variant={variant}>{text}</StyledButton>
+            <StyledButton onClick={clickHandler || (() => {})} className={className ? className : ''} variant={variant}>{text}</StyledButton>
         </>
     );
 }

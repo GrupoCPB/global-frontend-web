@@ -4,6 +4,8 @@ import Head from 'next/head';
 import theme from '../ui/themes/theme';
 import Header from '../ui/components/Header/Header';
 import Footer from '../ui/components/Footer/Footer';
+import DonationFooter from '../ui/components/Donation/Footer';
+import DonationHeader from '../ui/components/Donation/Header';
 import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }) {
@@ -22,14 +24,14 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         {
           isDonationPath ?
-          <p>Em construção...</p> 
+          <DonationHeader />
           :
           <Header />
         }
         <Component {...pageProps} />
         {
           isDonationPath ?
-          <p>Em construção...</p> 
+          <DonationFooter />
           :
           <Footer />
         }

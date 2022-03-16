@@ -8,7 +8,7 @@ const theme = createTheme({
             dark: '#11709E',
         },
         secondary: {
-            light: '#A12366',
+            light: '#FB1393',
             main: '#7A0E48',
             dark: '#520B31',
         },
@@ -37,7 +37,7 @@ const theme = createTheme({
         fontFamily: 'Open Sans',
     },
     shape: {
-        borderRadius: '3px',
+        borderRadius: 3,
     },
     components: {
         MuiButton: {

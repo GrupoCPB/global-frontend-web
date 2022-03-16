@@ -7,6 +7,10 @@ import DateInput from "../Inputs/DateInput";
 import Banner from "./banner";
 
 export default function Relatorio() {
+    // async function api() {
+    //     const data = await fetch('https://grupocpb.org/api/transparencia').then(res => res.json())
+    //     console.log(data)
+    // }
 
     return (
         <StyledMainRelatorioWrapper>
