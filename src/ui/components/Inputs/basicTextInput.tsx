@@ -7,7 +7,6 @@ export const BasicTextInputStyle = styled('label')`
     width: auto;
 
     span {
-        font-family: Open Sans;
         font-size: 16px;
         font-style: normal;
         font-weight: 700;

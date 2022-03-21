@@ -1,16 +1,39 @@
 import { StyledMainRelatorioWrapper } from "../../../styles/donation/RelatorioMainPage.styles";
 import { Container, Box } from '@material-ui/core';
-import BasicButton from "../buttons/BasicButton";
+import BasicButton from "../Buttons/BasicButton";
 import RelatorioTextInput from "../Inputs/RelatorioTextInput";
 import CheckboxInput from "../Inputs/Checkbox";
 import DateInput from "../Inputs/DateInput";
 import Banner from "./banner";
+import MetasDoarArea from "./MetasDoarAreaButtons";
+import { useState, useEffect } from "react";
 
 export default function Relatorio() {
-    // async function api() {
-    //     const data = await fetch('https://grupocpb.org/api/transparencia').then(res => res.json())
-    //     console.log(data)
-    // }
+    const [state, setState] = useState({
+        donationsData: []
+    })
+
+    async function getDonationsData() {
+        const data = await fetch('https://grupocpb.org/api/transparencia').then(res => res.json())
+
+        const dataModified = data.map(el => {
+            let newValue = Number.parseFloat(el.valor).toFixed(2);
+
+            newValue = '+ R$ ' + newValue.toString().replace(/\./, ',');
+
+            el.valor = newValue;
+
+            return el
+        })
+        
+        setState({
+            donationsData: dataModified
+        })
+    }
+
+    useEffect(() => {
+        getDonationsData()
+    }, [])
 
     return (
         <StyledMainRelatorioWrapper>
@@ -18,10 +41,23 @@ export default function Relatorio() {
                 <Banner />
             </Box>
 
-            <Container>
-                <div className='relatorio-text-div'>
+            <Container className='site-navigation-area'>
+                <div className='navigation-path-div'>
+                    <a>Página inicial</a>
+                    <img src='/donation_images/path-arrow.png' />
+                    <a>Transparência</a>
+                </div>
+
+                <BasicButton variant='text' text='Voltar' anyStartIcon={<img src='/donation_images/arrow-back.png' alt='voltar'/>} />
+            </Container>
+
+            <Container className='options-section'>
+                <div className='otpions-text-div'>
                     <p>Acompanhe nossa transparência em <strong>tempo real</strong>, com tudo que entra e sai de doações.</p>
-                    <p>Acesse as <a href='#'>metas</a> e todas as <a href='#'>doações</a>.</p>
+                </div>
+
+                <div>
+                    <MetasDoarArea />
                 </div>
             </Container>
 
@@ -46,7 +82,7 @@ export default function Relatorio() {
                     </div>
 
                     <div>
-                        <BasicButton text='Gerar PDF' variant='outlined' className='gerarPDF' />
+                        <BasicButton text='Gerar PDF' variant='outlined' className='gerarPDF' anyStartIcon={<img src='/donation_images/download-icon.png' alt='download'></img>} />
                     </div>
                 </Box>
 
@@ -100,9 +136,9 @@ export default function Relatorio() {
 
             <Container className='relatorio-section-3'>
                 <h2>Resumo das doações</h2>
-
                 <table>
                     <tbody>
+                        {/*Aqui falta fazer o map nas doações do state*/}
                         <tr>
                             <td>
                                 Doação para a ONG Pais afetivos
@@ -177,7 +213,7 @@ export default function Relatorio() {
                     </tbody>
                 </table>
 
-                <BasicButton variant='outlined' text='Veja mais doações' className='mais-doacoes'/>
+                <BasicButton variant='outlined' text='Veja mais doações' className='mais-doacoes' />
             </Container>
         </StyledMainRelatorioWrapper>
     )

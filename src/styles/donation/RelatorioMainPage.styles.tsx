@@ -1,15 +1,33 @@
 import { styled } from "@material-ui/core";
 
 export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
-    '.section:not(.relatorio-section-1)': {
-        marginTop: '50px'
+    '.site-navigation-area': {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: '20px',
+        marginBottom: '60px',
+
+        '.navigation-path-div': {
+            width: 'max-content',
+            display: 'grid',
+            gridTemplateColumns: 'auto auto auto',
+            placeItems: 'center',
+            columnGap: '15px'
+        }
     },
 
     '.relatorio-section-1': {
         background: `${theme.palette.grey['100']}`,
     },
 
-    '.relatorio-text-div': {
+    '.options-section': {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+
+    '.options-text-div': {
         'a': {
             textDecoration: 'none',
             color: `${theme.palette.secondary.light}`,
@@ -26,6 +44,8 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
     },
 
     '.relatorio-section-2': {
+        marginBottom: '100px',
+
         '.relatorio-section-2-first-box': {
             display: 'flex',
             alignItems: 'center',
@@ -40,6 +60,19 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+
+            '.gerarPDF': {
+                color: 'black',
+                borderColor: 'black',
+
+                '&:hover': {
+                    background: 'rgba(0,0,0,0.1)'
+                },
+        
+                '.MuiTouchRipple-ripple': {
+                    background: 'rgba(0,0,0,0.2)'
+                }
+            }
         },
 
         '.relatorio-section-2-third-box': {
@@ -83,6 +116,7 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
 
     '.relatorio-section-3': {
         display: 'grid',
+        marginBottom: '100px',
 
         'table': {
             borderSpacing: '0',
@@ -91,7 +125,7 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
             marginBottom: '60px',
 
             'tr': {
-                '&:nth-of-type(even)': {
+                '&:nth-of-type(odd)': {
                     background: `${theme.palette.grey['50']}`
                 }
             },
@@ -114,7 +148,17 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
     '.mais-doacoes': {
         placeSelf: 'center',
         width: 'max-content',
-        fontWeight: '600'
+        fontWeight: '600',
+        color: 'black',
+        borderColor: 'black',
+
+        '&:hover': {
+            background: 'rgba(0,0,0,0.1)'
+        },
+
+        '.MuiTouchRipple-ripple': {
+            background: 'rgba(0,0,0,0.2)'
+        }
     }
 }))
 

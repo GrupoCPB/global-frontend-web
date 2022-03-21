@@ -47,16 +47,6 @@ export const StyledHeader = styled('header')`
         display: flex;
         justify-content: space-between;
 
-        .donation-logo {
-            display: flex;
-            width: fit-content;
-            align-items: center;
-    
-            img {
-                margin-right: 20px;
-            }
-        }
-
         nav {
             display: flex;
 

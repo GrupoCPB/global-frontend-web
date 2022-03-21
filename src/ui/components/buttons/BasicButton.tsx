@@ -1,11 +1,13 @@
 import { Button, styled } from '@material-ui/core';
-import { MouseEventHandler } from 'react';
+import { MouseEventHandler, ReactElement } from 'react';
 
 type ButtonProps = {
-    variant: 'outlined' | 'contained',
+    variant: 'outlined' | 'contained' | 'text',
     text: String,
     className?: string,
-    clickHandler?: MouseEventHandler<HTMLButtonElement>
+    clickHandler?: MouseEventHandler<HTMLButtonElement>,
+    anyEndIcon?: ReactElement,
+    anyStartIcon?: ReactElement
 }
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -28,10 +30,18 @@ const StyledButton = styled(Button)(({ theme }) => ({
     }
 }))
 
-export default function BasicButton({ variant, text, className, clickHandler }: ButtonProps) {
+export default function BasicButton({ variant, text, className, clickHandler, anyEndIcon, anyStartIcon }: ButtonProps) {
     return (
         <>
-            <StyledButton onClick={clickHandler || (() => {})} className={className ? className : ''} variant={variant}>{text}</StyledButton>
+            <StyledButton
+                onClick={clickHandler || (() => { })}
+                className={className ? className : ''}
+                variant={variant}
+                endIcon={anyEndIcon}
+                startIcon={anyStartIcon}
+            >
+                {text}
+            </StyledButton>
         </>
     );
 }
