@@ -1,24 +1,26 @@
 import { StyledArea } from "../../../styles/donation/MetasDoarAreaButtons.styles";
-import BasicButton from "../Buttons/BasicButton";
+import { Button } from "@material-ui/core";
 
 export default function MetasDoarArea() {
     return (
         <StyledArea>
-            <BasicButton
-                text='Metas'
+            <Button
                 className='metas-button'
-                anyStartIcon={<img src='/donation_images/metas-icon.png' alt='metas'></img>}
+                startIcon={<img src='/donation_images/metas-icon.png' alt='metas'></img>}
                 variant='contained'
-            />
+            >
+                Metas
+            </Button>
 
-            <img src='/donation_images/dots-icon.png' alt='dots'/>
+            <img src='/donation_images/dots-icon.png' alt='dots' />
 
-            <BasicButton
-                text='Doar'
+            <Button
                 className='doar-button'
-                anyStartIcon={<img src='/donation_images/doar-icon.png' alt='doar'></img>}
+                startIcon={<img src='/donation_images/doar-icon.png' alt='doar'></img>}
                 variant='contained'
-            />
-        </StyledArea>
+            >
+                Doar
+            </Button>
+        </StyledArea >
     )
 }

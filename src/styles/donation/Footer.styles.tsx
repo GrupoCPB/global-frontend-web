@@ -40,11 +40,6 @@ export const StyledFooter = styled('footer')`
                 .footer-newsletter-email-input {
                     padding: 0 0 0 10px;
                 }
-
-                .footer-newsletter-send-button {
-                    color: white;
-                    background: ${({theme}) => theme.palette.secondary.light};
-                }
             }
         }
     }

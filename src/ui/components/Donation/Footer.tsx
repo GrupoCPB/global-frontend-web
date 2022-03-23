@@ -1,8 +1,7 @@
 import { StyledFooter } from '../../../styles/donation/Footer.styles';
-import { Container, Box } from '@material-ui/core';
+import { Container, Box, Button } from '@material-ui/core';
 import DonationLogo from './Logo';
 import SocialMediaLinks from './SocialMediaLinks';
-import BasicButton from '../Buttons/BasicButton';
 
 export default function DonationFooter() {
     return (
@@ -56,13 +55,15 @@ export default function DonationFooter() {
 
                     <div className='inputs-container'>
                         <input className='footer-newsletter-email-input' type='email' placeholder='Insira o seu e-mail' />
-                        
-                        <BasicButton
-                            text='Enviar'
+
+                        <Button
                             className='footer-newsletter-send-button'
                             variant='contained'
-                            anyEndIcon={<img src='/donation_images/send-button.png' alt='send' />}
-                        />
+                            endIcon={<img src='/donation_images/send-button.png' alt='send' />}
+                            color='secondary'
+                        >
+                            Enviar
+                        </Button>
                     </div>
 
                 </Box>

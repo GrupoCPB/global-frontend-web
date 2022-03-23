@@ -1,8 +1,8 @@
 import { StyledHeader } from "../../../styles/donation/Header.styles";
 import HeaderLinks from "./HeaderLinks";
 import DonationLogo from './Logo';
-import { Container } from "@material-ui/core";
-import BasicButton from "../Buttons/BasicButton";
+import { Container, Button } from "@material-ui/core";
+
 
 export default function DonationHeader() {
     return (
@@ -11,7 +11,7 @@ export default function DonationHeader() {
 
             <Container className='donation-header-main-bar'>
                 <DonationLogo />
-                
+
                 <nav>
                     <ul>
                         <li>
@@ -46,11 +46,22 @@ export default function DonationHeader() {
                     </ul>
 
                     <div className='login-or-signin'>
-                        <button className='login-button'>
+                        <Button
+                            className='login-button'
+                            variant='text'
+                            endIcon={<img src='/donation_images/arrow_down.png' />}
+                            sx={{color: '#5c5b5b'}}
+                        >
                             Login
-                            <img src='/donation_images/arrow_down.png' />
-                        </button>
-                        <BasicButton className='variant-contained' variant="contained" text='Seja um doador' />
+                        </Button>
+
+                        <Button
+                            className='variant-contained'
+                            variant='contained'
+                            color='secondary'
+                        >
+                            Seja um doador
+                        </Button>
                     </div>
                 </nav>
             </Container>

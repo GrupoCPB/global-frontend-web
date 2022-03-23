@@ -61,22 +61,8 @@ export const StyledHeader = styled('header')`
             .login-or-signin {
                 display: flex;
                 align-items: center;
-                
-                .login-button {
-                    background: none;
-                    border: none;
-                    cursor: pointer;
-                    font-size: 1rem;
-                    display: flex;
-                    align-items: center;
-                    margin-right: 20px;
-                    
-                    img {
-                        margin: 0 10px;
-                    }
-                }
+                column-gap: 20px;
             }
-
         }
     }
 

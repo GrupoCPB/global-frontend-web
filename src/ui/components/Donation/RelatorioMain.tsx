@@ -1,10 +1,9 @@
 import { StyledMainRelatorioWrapper } from "../../../styles/donation/RelatorioMainPage.styles";
-import { Container, Box } from '@material-ui/core';
-import BasicButton from "../Buttons/BasicButton";
+import { Container, Box, Button } from '@material-ui/core';
 import RelatorioTextInput from "../Inputs/RelatorioTextInput";
 import CheckboxInput from "../Inputs/Checkbox";
 import DateInput from "../Inputs/DateInput";
-import Banner from "./banner";
+import Banner from "./Banner";
 import MetasDoarArea from "./MetasDoarAreaButtons";
 import { useState, useEffect } from "react";
 
@@ -25,7 +24,7 @@ export default function Relatorio() {
 
             return el
         })
-        
+
         setState({
             donationsData: dataModified
         })
@@ -48,7 +47,12 @@ export default function Relatorio() {
                     <a>Transparência</a>
                 </div>
 
-                <BasicButton variant='text' text='Voltar' anyStartIcon={<img src='/donation_images/arrow-back.png' alt='voltar'/>} />
+                <Button
+                    variant='text'
+                    startIcon={<img src='/donation_images/arrow-back.png' alt='voltar' />}
+                >
+                    Voltar
+                </Button>
             </Container>
 
             <Container className='options-section'>
@@ -82,7 +86,13 @@ export default function Relatorio() {
                     </div>
 
                     <div>
-                        <BasicButton text='Gerar PDF' variant='outlined' className='gerarPDF' anyStartIcon={<img src='/donation_images/download-icon.png' alt='download'></img>} />
+                        <Button
+                            variant='outlined'
+                            className='gerarPDF'
+                            startIcon={<img src='/donation_images/download-icon.png' alt='download'></img>}
+                        >
+                            Gerar PDF
+                        </Button>
                     </div>
                 </Box>
 
@@ -213,7 +223,12 @@ export default function Relatorio() {
                     </tbody>
                 </table>
 
-                <BasicButton variant='outlined' text='Veja mais doações' className='mais-doacoes' />
+                <Button
+                    variant='outlined'
+                    className='mais-doacoes'
+                >
+                    Veja mais doações
+                </Button>
             </Container>
         </StyledMainRelatorioWrapper>
     )

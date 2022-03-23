@@ -15,6 +15,10 @@ export const StyledArea = styled(Box)`
 
     .metas-button {
         background: ${({theme}) => theme.palette.success.main};
+
+        &:hover {
+            background: ${({theme}) => theme.palette.success.main} + '95';
+        }
     }
 
     .doar-button {
