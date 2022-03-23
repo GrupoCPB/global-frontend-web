@@ -1,5 +1,5 @@
 import { Button } from '@material-ui/core';
-import { StyledHomepageCard } from '../../../styles/donation/HomepageGreyCard.styles';
+import { StyledHomepageCard } from '../../../../styles/donation/HomepageGreyCard.styles';
 
 type GrayCardType = {
     target: 'empresa' | 'consumidor',

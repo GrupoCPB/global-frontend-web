@@ -1,4 +1,4 @@
-import { StyledMetasCard } from '../../../styles/donation/MetasCard.styles';
+import { StyledMetasCard } from '../../../../styles/donation/MetasCard.styles';
 import {Button} from '@material-ui/core'
 
 type MetasCardType = {

@@ -35,7 +35,6 @@ export const StyledDonationMainPageWrapper = styled('main')`
     .metasEmDestaque-section {
         display: flex;
         justify-content: space-between;
-        border: solid 1px red;
         flex-wrap: wrap;
 
         margin-bottom: 100px;

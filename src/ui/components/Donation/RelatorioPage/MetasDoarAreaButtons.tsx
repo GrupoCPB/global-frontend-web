@@ -1,4 +1,4 @@
-import { StyledArea } from "../../../styles/donation/MetasDoarAreaButtons.styles";
+import { StyledArea } from "../../../../styles/donation/MetasDoarAreaButtons.styles";
 import { Button } from "@material-ui/core";
 
 export default function MetasDoarArea() {

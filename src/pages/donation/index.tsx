@@ -1,4 +1,4 @@
-import Index from "../../ui/components/Donation/IndexMain";
+import Index from "../../ui/components/Donation/IndexPage/IndexMain";
 
 export default function DonationIndex() {
     return (

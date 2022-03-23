@@ -1,9 +1,9 @@
-import { StyledMainRelatorioWrapper } from "../../../styles/donation/RelatorioMainPage.styles";
+import { StyledMainRelatorioWrapper } from "../../../../styles/donation/RelatorioMainPage.styles";
 import { Container, Box, Button } from '@material-ui/core';
-import RelatorioTextInput from "../Inputs/RelatorioTextInput";
-import CheckboxInput from "../Inputs/Checkbox";
-import DateInput from "../Inputs/DateInput";
-import Banner from "./Banner";
+import RelatorioTextInput from "../../Inputs/RelatorioTextInput";
+import CheckboxInput from "../../Inputs/Checkbox";
+import DateInput from "../../Inputs/DateInput";
+// import Banner from "../BannerSecundario";
 import MetasDoarArea from "./MetasDoarAreaButtons";
 import { useState, useEffect } from "react";
 
@@ -37,7 +37,7 @@ export default function Relatorio() {
     return (
         <StyledMainRelatorioWrapper>
             <Box className='relatorio-section-1 section'>
-                <Banner />
+                {/* <Banner /> */}
             </Box>
 
             <Container className='site-navigation-area'>
