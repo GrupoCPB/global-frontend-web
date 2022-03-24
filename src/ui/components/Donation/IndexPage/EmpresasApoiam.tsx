@@ -1,23 +1,6 @@
-import { Container, styled } from '@material-ui/core';
 import EmpresaIcon from './EmpresaIcon';
-
-const StyledContainer = styled(Container)`
-    background: ${({ theme }) => theme.palette.grey['100']};
-    padding-bottom: 100px;
-    padding-top: 100px;
-
-    .inner-container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        h1 {
-            width: 100%;
-            text-align: center;
-            margin: 0 auto 30px;
-        }
-    }
-`
+import { Container } from '@material-ui/core';
+import { StyledContainer } from '../../../../styles/donation/EmpresasApoiam.styles';
 
 export default function EmpresasApoio() {
     return (
@@ -32,7 +15,7 @@ export default function EmpresasApoio() {
                         '/donation_images/empresas-icons/caligo.png',
                         '/donation_images/empresas-icons/uniflores.png',
                     ].map(el => {
-                        return <EmpresaIcon imgSrc={el} />
+                        return <EmpresaIcon imgSrc={el} key={Math.random() * 1000} />
                     })
                 }
             </Container>

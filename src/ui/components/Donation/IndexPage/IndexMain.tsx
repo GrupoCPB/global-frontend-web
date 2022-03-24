@@ -2,7 +2,7 @@ import { StyledDonationMainPageWrapper } from "../../../../styles/donation/Donat
 import Banner from './Banner';
 import EmpresaOuConsumidor from './EmpresaOuConsumidor';
 import MetasEmDestaque from "./MetasEmDestaque";
-import EmpresasApoio from "../../../../styles/donation/EmpresasApoiam";
+import EmpresasApoio from "./EmpresasApoiam";
 
 export default function Index() {
     return (
