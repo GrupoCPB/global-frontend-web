@@ -34,7 +34,7 @@ export const StyledHeader = styled('header')`
         }
 
         .idioma {
-            margin: 0 50px;
+            margin-left: 40px;
             display: grid;
             grid-template-columns: auto auto;
             column-gap: 20px;
@@ -48,10 +48,12 @@ export const StyledHeader = styled('header')`
         display: flex;
         justify-content: space-between;
 
-        nav {
+        .top-bar-nav {
             display: flex;
+            justify-content: space-between;
+            width: 80%;
 
-            ul {
+            .top-bar-ul {
                 margin-right: 30px;
 
                 li {
@@ -63,6 +65,7 @@ export const StyledHeader = styled('header')`
                 display: flex;
                 align-items: center;
                 column-gap: 20px;
+                position: relative;
             }
         }
     }
