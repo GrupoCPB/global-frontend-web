@@ -6,8 +6,6 @@ export const StyledBanner = styled(Container)`
     place-items: center;
 
     & div:first-of-type {
-        padding: 50px 20px 50px 75px;
-
         & h1 {
             font-size: 3vw;
             padding-right: 70px;
