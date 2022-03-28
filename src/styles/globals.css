@@ -22,3 +22,15 @@ a {
 button, a {
   cursor: pointer;
 }
+
+
+
+@media (max-width: 1400px) {
+  
+  .MuiContainer-maxWidthXl {
+
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+}

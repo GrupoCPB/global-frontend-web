@@ -4,8 +4,8 @@ import { StyledContainer } from '../../../../styles/donation/EmpresasApoiam.styl
 
 export default function EmpresasApoio() {
     return (
-        <StyledContainer maxWidth='xl'>
-            <Container className='inner-container'>
+        <StyledContainer>
+            <Container maxWidth='xl' className='inner-container'>
                 <h1>Empresas que apoiam esta organização</h1>
                 {
                     [

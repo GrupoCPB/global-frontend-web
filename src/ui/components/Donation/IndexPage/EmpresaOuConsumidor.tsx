@@ -3,7 +3,7 @@ import { Container } from "@material-ui/core";
 
 export default function EmpresaOuConsumidor() {
     return (
-        <Container className='empresaOuConsumidor-section'>
+        <Container maxWidth='xl' className='empresaOuConsumidor-section'>
             <BasicGreyCard
                 target='empresa'
                 content='Encante e engaje seus clientes com as causas sociais que 

@@ -1,16 +1,7 @@
 import { styled } from '@material-ui/core';
 
-export const StyledLogo = styled('div')`       
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-    align-items: center;
-    position: relative;
+export const StyledLogo = styled('div')`  
     transform-origin: 0;
-   
-    img {
-        margin-right: 20px;
-    }
 
     &.small {
         transform: scale(0.7);

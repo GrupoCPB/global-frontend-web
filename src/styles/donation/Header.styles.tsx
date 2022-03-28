@@ -43,7 +43,8 @@ export const StyledHeader = styled('header')`
     }
 
     .donation-header-main-bar {
-        padding: 20px 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
         display: flex;
         justify-content: space-between;
 

@@ -1,4 +1,4 @@
-import { StyledBanner } from "../../../styles/donation/Banner.styles"
+import { StyledBanner } from "../../../styles/donation/OldBanner.styles"
 
 export default function Banner() {
     return (

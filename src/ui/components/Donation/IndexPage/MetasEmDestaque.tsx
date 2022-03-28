@@ -34,7 +34,7 @@ export default function MetasEmDestaque() {
     ]
 
     return (
-        <Container className='metasEmDestaque-section'>
+        <Container maxWidth='xl' className='metasEmDestaque-section'>
             <h1>Metas em destaque</h1>
             {
                 metas_em_destaque.map(el => {

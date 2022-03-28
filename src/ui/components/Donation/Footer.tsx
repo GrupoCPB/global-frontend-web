@@ -5,8 +5,8 @@ import SocialMediaLinks from './SocialMediaLinks';
 
 export default function DonationFooter() {
     return (
-        <Container component={StyledFooter} maxWidth='xl'>
-            <Container className='footer-inner-wrapper-1'>
+        <StyledFooter>
+            <Container maxWidth='xl' className='footer-inner-wrapper-1'>
                 <Box className='footer-area'>
                     <DonationLogo size='small' />
                 </Box>
@@ -69,10 +69,12 @@ export default function DonationFooter() {
                 </Box>
             </Container>
 
-            <Container className='footer-inner-wrapper-2'>
+            <hr></hr>
+
+            <Container maxWidth='xl' className='footer-inner-wrapper-2'>
                 <span>© 2022 Global Donation  |  Todos os direitos reservados</span>
                 <span><SocialMediaLinks /></span>
             </Container>
-        </Container>
+        </StyledFooter>
     )
 }

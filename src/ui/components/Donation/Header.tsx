@@ -9,7 +9,7 @@ export default function DonationHeader() {
         <StyledHeader>
             <HeaderLinks />
 
-            <Container className='donation-header-main-bar'>
+            <Container maxWidth='xl' className='donation-header-main-bar'>
                 <DonationLogo />
 
                 <nav>

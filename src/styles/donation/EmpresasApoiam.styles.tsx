@@ -1,6 +1,6 @@
 import { Container, styled } from '@material-ui/core';
 
-export const StyledContainer = styled(Container)`
+export const StyledContainer = styled('div')`
     background: ${({ theme }) => theme.palette.grey['100']};
     padding-bottom: 100px;
     padding-top: 100px;

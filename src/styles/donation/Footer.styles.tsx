@@ -7,7 +7,7 @@ export const StyledFooter = styled('footer')`
     .footer-inner-wrapper-1 {
         display: flex;
         justify-content: space-between;
-        padding: 0 0 50px;
+        padding-bottom: 50px;
 
         & .footer-area {
             display: flex;
@@ -44,12 +44,16 @@ export const StyledFooter = styled('footer')`
         }
     }
 
+    hr {
+        width: 86%;
+        border: none;
+        border-top: solid 1px ${({theme}) => theme.palette.grey['200']};
+    }
+
     .footer-inner-wrapper-2 {
-        padding: 0;
-        border-top: solid 1px #EBE7EA;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-`;
+`
