@@ -17,8 +17,8 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
         }
     },
 
-    '.relatorio-section-1': {
-        background: `${theme.palette.grey['100']}`,
+    '.relatorio-section-1': {   
+        background: `${theme.palette.grey['100']}`,    
     },
 
     '.options-section': {
