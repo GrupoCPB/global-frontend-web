@@ -17,8 +17,8 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
         }
     },
 
-    '.relatorio-section-1': {   
-        background: `${theme.palette.grey['100']}`,    
+    '.relatorio-section-1': {
+        background: `${theme.palette.grey['100']}`,
     },
 
     '.options-section': {
@@ -53,13 +53,13 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
 
             '.checkboxes-box': {
                 marginLeft: '40px'
-            }
-        },
+            },
 
-        '.relatorio-section-2-second-box': {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
+            '.PDF-button-box': {
+                flexGrow: '4',
+                display: 'flex',
+                justifyContent: 'flex-end'
+            },
 
             '.gerarPDF': {
                 color: 'black',
@@ -68,50 +68,80 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
                 '&:hover': {
                     background: 'rgba(0,0,0,0.1)'
                 },
-        
+
                 '.MuiTouchRipple-ripple': {
                     background: 'rgba(0,0,0,0.2)'
                 }
             }
         },
 
-        '.relatorio-section-2-third-box': {
-            'table': {
-                width: '100%',
-                borderSpacing: '0',
+        '.relatorio-section-2-second-box': {
+            display: 'flex',
+            alignItems: 'center',
 
-                'td': {
-                    borderBottom: 'solid 1px #00000013',
-                    padding: '10px 0',
+            '.relatorio-section-2-data-inicial-div, .relatorio-section-2-data-final-div': {
+                display: 'flex',
+                alignItems: 'center'
+            },
+            
+            'span': {
+                fontSize: '16px',
+                fontWeight: '700',
+                display: 'grid',
+                placeItems: 'center',
+                margin: '0 40px 0 20px'
+            },
 
-                    '&:first-of-type': {
-                        fontWeight: '600'
-                    }
-                },
+            '.p-div': {
+                fontSize: '16px',
+                fontWeight: '600',
+                flexGrow: '4',
+                display: 'grid',
 
-                'tr': {
-                    width: '100%',
-
-                    '&:last-of-type': {
-                        'td': {
-                            border: 'none'
-                        }
-                    }
-                },
-
-                '.table-value': {
-                    width: '80%',
-                    color: 'green',
-                    fontWeight: '600',
-
-                    '&.negative': {
-                        'span': {
-                            color: 'red'
-                        }
-                    }
+                'p': {
+                    width: '60%',
+                    justifySelf: 'end'
                 }
             }
-        }
+        },
+
+        // '.relatorio-section-2-third-box': {
+        //     'table': {
+        //         width: '100%',
+        //         borderSpacing: '0',
+
+        //         'td': {
+        //             borderBottom: 'solid 1px #00000013',
+        //             padding: '10px 0',
+
+        //             '&:first-of-type': {
+        //                 fontWeight: '600'
+        //             }
+        //         },
+
+        //         'tr': {
+        //             width: '100%',
+
+        //             '&:last-of-type': {
+        //                 'td': {
+        //                     border: 'none'
+        //                 }
+        //             }
+        //         },
+
+        //         '.table-value': {
+        //             width: '80%',
+        //             color: 'green',
+        //             fontWeight: '600',
+
+        //             '&.negative': {
+        //                 'span': {
+        //                     color: 'red'
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     },
 
     '.relatorio-section-3': {

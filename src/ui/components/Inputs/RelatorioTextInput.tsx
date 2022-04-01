@@ -10,6 +10,8 @@ const StyledTextField = styled(TextField)`
         background: none;
         border: none;
         cursor: pointer;
+        display: grid;
+        place-items: center;
     }
 `
 

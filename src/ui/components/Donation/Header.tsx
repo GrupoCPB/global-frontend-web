@@ -6,7 +6,7 @@ import LoginOptions from './LoginOptions';
 import {useState} from 'react';
 
 export default function DonationHeader() {
-    const [isOpen, setMenuOpenState] = useState(true);
+    const [isOpen, setMenuOpenState] = useState(false);
 
     function toggleLoginMenu() {
         setMenuOpenState(!isOpen);

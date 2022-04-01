@@ -1,7 +1,7 @@
 import { Select, MenuItem, styled } from '@material-ui/core';
 
 const StyledSelect = styled(Select)`
-    margin: 0 40px;
+    margin: 0 10px 0 5px;
 
     fieldset {
         border: none;

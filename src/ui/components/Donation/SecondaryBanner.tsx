@@ -1,4 +1,4 @@
-import { StyledBanner } from "../../../styles/donation/OldBanner.styles"
+import { StyledBanner } from "../../../styles/donation/SecondaryBanner.styles"
 
 export default function Banner() {
     return (
@@ -7,9 +7,7 @@ export default function Banner() {
                 <h1>Transparência</h1>
             </div>
 
-            <div className='banner-background'>
-                <img src='/donation_images/banner2_image.png' />
-            </div>
+            <div className='banner-background' />
         </StyledBanner>
     )
 }

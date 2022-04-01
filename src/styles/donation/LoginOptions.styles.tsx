@@ -8,7 +8,7 @@ export const StyledLoginOptions = styled('div')`
     overflow: hidden;
     bottom: -200%;
     left: -35%;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s linear;
     transform-origin: top;
 
     &.closed {

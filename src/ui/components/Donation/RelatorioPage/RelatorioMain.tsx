@@ -3,8 +3,9 @@ import { Container, Box, Button } from '@material-ui/core';
 import RelatorioTextInput from "../../Inputs/RelatorioTextInput";
 import CheckboxInput from "../../Inputs/Checkbox";
 import DateInput from "../../Inputs/DateInput";
-// import Banner from "../BannerSecundario";
+import Banner from "../SecondaryBanner";
 import MetasDoarArea from "./MetasDoarAreaButtons";
+import Table from './Table';
 import { useState, useEffect } from "react";
 
 export default function Relatorio() {
@@ -36,9 +37,10 @@ export default function Relatorio() {
 
     return (
         <StyledMainRelatorioWrapper>
-            <Box className='relatorio-section-1 section'>
-                {/* <Banner /> */}
-            </Box>
+            <div className='relatorio-section-1'>
+                <Banner />
+            </div>
+
 
             <Container className='site-navigation-area'>
                 <div className='navigation-path-div'>
@@ -76,16 +78,8 @@ export default function Relatorio() {
                         <CheckboxInput label='Pagamentos' />
                         <CheckboxInput label='Investimentos' />
                     </Box>
-                </Box>
 
-                <Box className='relatorio-section-2-second-box'>
-                    <div>
-                        <DateInput type='Data' />
-                        <DateInput type='Mês' />
-                        <DateInput type='Ano' />
-                    </div>
-
-                    <div>
+                    <Box className='PDF-button-box'>
                         <Button
                             variant='outlined'
                             className='gerarPDF'
@@ -93,10 +87,32 @@ export default function Relatorio() {
                         >
                             Gerar PDF
                         </Button>
+                    </Box>
+                </Box>
+
+                <Box className='relatorio-section-2-second-box'>
+                    <div className='relatorio-section-2-data-inicial-div'>
+                        <DateInput type='Data' />
+                        <DateInput type='Mês' />
+                        <DateInput type='Ano' />
+                    </div>
+
+                    <span>Até</span>
+
+                    <div className='relatorio-section-2-data-final-div'>
+                        <DateInput type='Data' />
+                        <DateInput type='Mês' />
+                        <DateInput type='Ano' />
+                    </div>
+
+                    <div className='p-div'>
+                        <p>Valor</p>
                     </div>
                 </Box>
 
-                <Box className='relatorio-section-2-third-box'>
+                <Table></Table>
+
+                {/* <Box className='relatorio-section-2-third-box'>
                     <table>
                         <tbody>
                             <tr>
@@ -141,7 +157,7 @@ export default function Relatorio() {
                             </tr>
                         </tbody>
                     </table>
-                </Box>
+                </Box> */}
             </Container>
 
             <Container className='relatorio-section-3'>
