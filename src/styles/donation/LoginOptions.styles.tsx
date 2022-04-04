@@ -10,6 +10,7 @@ export const StyledLoginOptions = styled('div')`
     left: -35%;
     transition: transform 0.2s linear;
     transform-origin: top;
+    z-index: 2;
 
     &.closed {
         transform: scale(1, 0);

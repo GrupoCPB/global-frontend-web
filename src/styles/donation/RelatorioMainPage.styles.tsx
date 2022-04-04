@@ -83,7 +83,7 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
                 display: 'flex',
                 alignItems: 'center'
             },
-            
+
             'span': {
                 fontSize: '16px',
                 fontWeight: '700',
@@ -146,33 +146,7 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
 
     '.relatorio-section-3': {
         display: 'grid',
-        marginBottom: '100px',
-
-        'table': {
-            borderSpacing: '0',
-            borderCollapse: 'separate',
-            width: '100%',
-            marginBottom: '60px',
-
-            'tr': {
-                '&:nth-of-type(odd)': {
-                    background: `${theme.palette.grey['50']}`
-                }
-            },
-
-            'td': {
-                padding: '15px 10px',
-                borderBottom: `solid 1px ${theme.palette.grey['100']}`,
-
-                '&:last-of-type': {
-                    textAlign: 'right'
-                },
-
-                '&:first-of-type': {
-                    fontWeight: '700'
-                }
-            }
-        }
+        marginBottom: '100px'
     },
 
     '.mais-doacoes': {
@@ -183,7 +157,8 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
         borderColor: 'black',
 
         '&:hover': {
-            background: 'rgba(0,0,0,0.1)'
+            background: 'rgba(0,0,0,0.1)',
+            borderColor: 'black'
         },
 
         '.MuiTouchRipple-ripple': {

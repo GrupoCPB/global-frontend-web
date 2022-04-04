@@ -17,11 +17,15 @@ export const StyledArea = styled(Box)`
         background: ${({theme}) => theme.palette.success.main};
 
         &:hover {
-            background: ${({theme}) => theme.palette.success.main} + '95';
+            background: ${({theme}) => theme.palette.success.main + '95'};
         }
     }
 
     .doar-button {
-        background: ${({theme}) => theme.palette.secondary.light} !important;
+        background: ${({theme}) => theme.palette.secondary.main};
+
+        &:hover {
+            background-color: ${({theme}) => theme.palette.secondary.main + '95'}; 
+        }
     }
 `;

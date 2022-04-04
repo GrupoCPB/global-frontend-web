@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import Box from '@material-ui/core/Box';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
@@ -6,44 +6,82 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import { styled } from '@material-ui/core';
 
 function createData(
-    name: string,
-    calories: number,
+    nome_instituicao: string,
+    valor: string,
 ) {
     return {
-        name,
-        calories,
+        nome_instituicao,
+        valor,
         history: [
             {
-                date: '2020-01-05',
-                customerId: '11091700',
-                amount: 3,
+                nome_instituicao2: 'qualquer',
+                valor2: '1000'
             },
             {
-                date: '2020-01-02',
-                customerId: 'Anonymous',
-                amount: 1,
+                nome_instituicao2: 'qualquer',
+                valor2: '2000'
             },
         ],
     };
 }
 
+const TableWrapper = styled('div')`
+    .table-row {
+        background-color: #F0F0F0;
+        display: grid;
+        grid-template-columns: 80% 20%;
+        padding: 10px;
+        margin-bottom: 7px;
+
+        &.intern {
+            background-color: white;
+            margin-bottom: 0;
+        }
+    }
+
+    .table-cell.th{
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .table-cell {
+        padding: 0;
+        border-bottom: 0;
+        
+        &.last {
+            display: grid;
+            place-items: center;
+        }
+        
+        &.intern {
+            width: 100%;
+            padding: 0;
+        }
+    }
+    
+    .intern-table {
+        padding: 0;
+    }
+
+`
+
 function Row(props: { row: ReturnType<typeof createData> }) {
     const { row } = props;
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     return (
         <>
-            <TableRow sx={{ background: '#F0F0F0' }}>
-                <TableCell component="th" scope="row" sx={{ padding: '10px' }}>
-                    Nome da organização
+            <TableRow className='table-row'>
+                <TableCell component="th" className='table-cell th'>
+                    <span>
+                        {row.nome_instituicao}
+                    </span>
 
                     <IconButton
                         aria-label="expand row"
@@ -57,30 +95,30 @@ function Row(props: { row: ReturnType<typeof createData> }) {
                 </TableCell>
 
 
-                <TableCell width={'100px'}>
-                    Valor
+                <TableCell className='table-cell last'>
+                    {row.valor}
                 </TableCell>
             </TableRow>
 
             <TableRow>
-                <TableCell style={{ paddingBottom: '4px', paddingTop: 0, border: 0}} colSpan={6}>
-                    <Collapse in={open} timeout="auto" unmountOnExit>
-                        <Box>
-                            <Table size="small" aria-label="">
-                                <TableBody>
-                                    {row.history.map((el) => (
-                                        <TableRow key={Math.random() * 1000} >
-                                            <TableCell component="th" scope="row" sx={{border: 0, margin: 0, padding: '6px 0'}}>
-                                                Nome
-                                            </TableCell>
-                                            <TableCell sx={{border: 0, margin: 0, padding: 0}} width={'100px'}>
-                                                Valor
-                                            </TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </Box>
+                <TableCell className='table-cell' colSpan={6} >
+                    <Collapse in={open} timeout="auto" unmountOnExit sx={{ width: '100% !important' }}>
+
+                        <Table size="small" aria-label="table" className='intern-table'>
+                            <TableBody>
+                                {row.history.map((el) => (
+                                    <TableRow key={Math.random() * 1000} className='table-row intern' >
+                                        <TableCell className='table-cell intern' component="th" scope="row">
+                                            {el.nome_instituicao2}
+                                        </TableCell>
+                                        <TableCell className='table-cell intern last'>
+                                            {el.valor2}
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+
                     </Collapse>
                 </TableCell>
             </TableRow>
@@ -89,23 +127,22 @@ function Row(props: { row: ReturnType<typeof createData> }) {
 }
 
 const rows = [
-    createData('Frozen yoghurt', 159),
-    createData('Ice cream sandwich', 237),
-    createData('Eclair', 262),
-    createData('Cupcake', 305),
-    createData('Gingerbread', 200)
+    createData('Total arrecado em  dinheiro', 'R$ 13.505,00'),
+    createData('Total utilizado em dinheiro', '-R$ 2.770,00'),
+    createData('Total de rendimentos', 'R$ 9.250,00'),
+    createData('Saldo disponível em dinheiro', 'R$ 13.505,00'),
 ];
 
 export default function CollapsibleTable() {
     return (
-        <TableContainer component={'div'}>
+        <TableWrapper>
             <Table aria-label="collapsible table">
                 <TableBody>
                     {rows.map((row) => (
-                        <Row key={row.name} row={row} />
+                        <Row key={row.nome_instituicao} row={row} />
                     ))}
                 </TableBody>
             </Table>
-        </TableContainer>
+        </TableWrapper>
     );
 }
