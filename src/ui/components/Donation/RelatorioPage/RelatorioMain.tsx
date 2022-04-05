@@ -5,7 +5,9 @@ import CheckboxInput from "../../Inputs/Checkbox";
 import DateInput from "../../Inputs/DateInput";
 import Banner from "../SecondaryBanner";
 import MetasDoarArea from "./MetasDoarAreaButtons";
-import Table from './Table';
+import Table from './Table/Table';
+import TableCollapsibleRow from './Table/TableCollapsibleRow';
+import { createDataCollapsibleRow } from './Table/TableCollapsibleRow';
 import { useState, useEffect } from "react";
 
 export default function Relatorio() {
@@ -91,18 +93,20 @@ export default function Relatorio() {
                 </Box>
 
                 <Box className='relatorio-section-2-second-box'>
-                    <div className='relatorio-section-2-data-inicial-div'>
-                        <DateInput type='Data' />
-                        <DateInput type='Mês' />
-                        <DateInput type='Ano' />
-                    </div>
+                    <div className='relatorio-datas-inputs'>
+                        <div className='relatorio-section-2-data-inicial-div'>
+                            <DateInput type='Data' />
+                            <DateInput type='Mês' />
+                            <DateInput type='Ano' />
+                        </div>
 
-                    <span>Até</span>
+                        <span>Até</span>
 
-                    <div className='relatorio-section-2-data-final-div'>
-                        <DateInput type='Data' />
-                        <DateInput type='Mês' />
-                        <DateInput type='Ano' />
+                        <div className='relatorio-section-2-data-final-div'>
+                            <DateInput type='Data' />
+                            <DateInput type='Mês' />
+                            <DateInput type='Ano' />
+                        </div>
                     </div>
 
                     <div className='p-div'>
@@ -110,12 +114,46 @@ export default function Relatorio() {
                     </div>
                 </Box>
 
-                <Table/>
+                <Table>
+                    {
+                        [
+                            createDataCollapsibleRow('Total arrecado em  dinheiro', 'R$ 13.505,00', [{ nome_instituicao2: 'aaa', valor2: '33' }, { nome_instituicao2: 'aaa2', valor2: '332' }]),
+                            createDataCollapsibleRow('Total utilizado em dinheiro', '-R$ 2.770,00', [{ nome_instituicao2: 'aaa', valor2: '33' }]),
+                            createDataCollapsibleRow('Total de rendimentos', 'R$ 9.250,00', [{ nome_instituicao2: 'aaa', valor2: '33' }]),
+                            createDataCollapsibleRow('Saldo disponível em dinheiro', 'R$ 13.505,00', [{ nome_instituicao2: 'aaa', valor2: '33' }]),
+                        ].map(el => {
+                            return <TableCollapsibleRow row={el} key={Math.random() * 1000} />
+                        })}
+                </Table>
+
+                <div className='relatorio-section-2-table-header-div'>
+                    <div className='relatorio-section-2-table-header-inner-div'>
+                        <span>Itens</span>
+
+                        <div>
+                            <span>Qtd. Itens</span>
+                            <span>Valor</span>
+                        </div>
+                    </div>
+
+                    <Table>
+                        {
+                            [
+                                createDataCollapsibleRow('Total arrecado em itens', 'R$ 16.275,00', [], '2.596'),
+                                createDataCollapsibleRow('Total utilizado de itens', '2.596', [{ nome_instituicao2: 'aaa', valor2: '33' }, { nome_instituicao2: 'aaa2', valor2: '332' }], '256'),
+                                createDataCollapsibleRow('Total de disponível de Itens', 'R$ 13.505,00', [{ nome_instituicao2: 'aaa', valor2: '33' }, { nome_instituicao2: 'aaa2', valor2: '332' }], '2.340'),
+                            ]
+                                .map(el => <TableCollapsibleRow row={el} key={Math.random() * 1000} />)
+                        }
+                    </Table>
+                </div>
+
+
             </Container>
 
             <Container className='relatorio-section-3'>
-                <h2>Resumo das doações</h2>
-                
+
+
 
                 <Button
                     variant='outlined'

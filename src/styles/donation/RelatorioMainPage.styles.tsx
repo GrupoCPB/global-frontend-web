@@ -76,12 +76,13 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
         },
 
         '.relatorio-section-2-second-box': {
-            display: 'flex',
-            alignItems: 'center',
+            display: 'grid',
+            gridTemplateColumns: '85% 15%',
+            width: '100%',
 
-            '.relatorio-section-2-data-inicial-div, .relatorio-section-2-data-final-div': {
+            '.relatorio-datas-inputs': {
                 display: 'flex',
-                alignItems: 'center'
+                width: 'fit-content',
             },
 
             'span': {
@@ -89,21 +90,38 @@ export const StyledMainRelatorioWrapper = styled('main')(({ theme }) => ({
                 fontWeight: '700',
                 display: 'grid',
                 placeItems: 'center',
-                margin: '0 40px 0 20px'
+                marginRight: '20px'
             },
 
             '.p-div': {
                 fontSize: '16px',
                 fontWeight: '600',
-                flexGrow: '4',
                 display: 'grid',
 
                 'p': {
-                    width: '60%',
-                    justifySelf: 'end'
+                    width: 'auto',
+                    justifySelf: 'center',
                 }
             }
         },
+
+        '.relatorio-section-2-table-header-div': {
+
+            '.relatorio-section-2-table-header-inner-div': {
+                justifyContent: 'space-between',
+                padding: '10px 0',
+                display: 'grid',
+                gridTemplateColumns: '70% 30%',
+                fontSize: '16px',
+                fontWeight: '600',
+
+                '& div': {
+                    display: 'grid',
+                    gridTemplateColumns: '50% 50%',
+                    placeItems: 'center'
+                }
+            }
+        }
 
         // '.relatorio-section-2-third-box': {
         //     'table': {

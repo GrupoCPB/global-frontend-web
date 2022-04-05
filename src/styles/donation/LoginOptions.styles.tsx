@@ -27,8 +27,6 @@ export const StyledLoginOptions = styled('div')`
         padding: 0;
         margin: 0;
 
-
-
         li {
             width: max-content;
             padding: 10px 30px 10px 20px;
