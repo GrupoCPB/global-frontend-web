@@ -37,7 +37,7 @@ export default function DateInput({ type }: DateInputType) {
                     {
                         dias.map(el => {
                             return (
-                                <MenuItem value={el}>{el}</MenuItem>
+                                <MenuItem value={el} key={Math.random() * 1000}>{el}</MenuItem>
                             )
                         })
                     }
@@ -54,7 +54,7 @@ export default function DateInput({ type }: DateInputType) {
                     {
                         meses.map(el => {
                             return (
-                                <MenuItem value={el}>{el}</MenuItem>
+                                <MenuItem value={el} key={Math.random() * 1000}>{el}</MenuItem>
                             )
                         })
                     }
@@ -71,7 +71,7 @@ export default function DateInput({ type }: DateInputType) {
                     {
                         anos.map(el => {
                             return (
-                                <MenuItem value={el}>{el}</MenuItem>
+                                <MenuItem value={el} key={Math.random() * 1000}>{el}</MenuItem>
                             )
                         })
                     }

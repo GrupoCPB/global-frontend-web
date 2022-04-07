@@ -12,18 +12,18 @@ export function createDataCollapsibleRow(
     return {
         nome_instituicao,
         valor,
-        history: history ? history : [''],
-        qtd_itens: qtd_itens ? qtd_itens : ''
+        history,
+        qtd_itens
     };
 }
 
-export default function TableCollapsibleRow(props: { row: ReturnType<typeof createDataCollapsibleRow> }) {
-    const { row } = props;
+export default function TableCollapsibleRow(props: { row: ReturnType<typeof createDataCollapsibleRow>, className?:string }) {
+    const { row, className } = props;
     const [open, setOpen] = useState(false);
 
     return (
         <>
-            <TableRow className='table-row'>
+            <TableRow className={`table-row ${className ? className : ''}`}>
                 <TableCell component="th" className='table-cell th'>
                     <span>
                         {row.nome_instituicao}
