@@ -8,16 +8,95 @@ import MetasDoarArea from "./MetasDoarAreaButtons";
 import Table from './Table/Table';
 import TableCollapsibleRow from './Table/TableCollapsibleRow';
 import { createDataCollapsibleRow } from './Table/TableCollapsibleRow';
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function Relatorio() {
+    const [state, setState] = useState({
+        tableData: {
+            entrada: [],
+            saida: [],
+            totalArrecadado: 0,
+            totalUtilizado: 0
+        }
+    })
+
+    function getDateInterval() {
+        const months = [
+            ['Janeiro', '01'],
+            ['Fevereiro', '02'],
+            ['Março', '03'],
+            ['Abril', '04'],
+            ['Maio', '05'],
+            ['Junho', '06'],
+            ['Julho', '07'],
+            ['Agosto', '08'],
+            ['Setembro', '09'],
+            ['Outubro', '10'],
+            ['Novembro', '11'],
+            ['Dezembro', '12']
+        ];
+
+        function replaceMonth(writtenMonth: String) {
+            return months.find(el => el[0] === writtenMonth)[1]
+        }
+
+        let initialDateInputsValues = Array.from(document.querySelectorAll('.relatorio-section-1-data-inicial-div input')).map((el: HTMLInputElement) => el.value);
+        let finalDateInputsValues = Array.from(document.querySelectorAll('.relatorio-section-1-data-final-div input')).map((el: HTMLInputElement) => el.value);
+
+        initialDateInputsValues.reverse()
+        finalDateInputsValues.reverse()
+
+        initialDateInputsValues[1] = replaceMonth(initialDateInputsValues[1])
+        finalDateInputsValues[1] = replaceMonth(finalDateInputsValues[1])
+
+        return [initialDateInputsValues, finalDateInputsValues]
+    }
+
+    async function getTableData() {
+        // let a = {
+        //     dataInicio: "2021-04-15",
+        //     dataFim: "2021-09-22"
+        // }
+
+        // let b = JSON.stringify(a)
+
+        // const data = await fetch('https://grupocpb.org/api/transparenciaByDate', {method: 'GET', body: b}).then(res => res.json())
+
+        const data = await fetch('https://grupocpb.org/api/transparencia').then(res => res.json())
+
+        let totalEntrada = 0;
+
+        let totalSaida = 0;
+
+        data.forEach(el => {
+            el.operacao === 'entrada' ? totalEntrada += Number(el.valor) : totalSaida += Number(el.valor)
+        })
+
+        const entrada = data.filter(el => el.operacao === 'entrada');
+
+        const saida = data.filter(el => el.operacao === 'saida');
+
+        setState({
+            tableData: {
+                entrada: entrada,
+                saida: saida,
+                totalArrecadado: totalEntrada,
+                totalUtilizado: totalSaida
+            }
+        })
+    }
+
+    useEffect(() => {
+        getTableData()
+        getDateInterval()
+    }, [])
+
 
     return (
         <StyledMainRelatorioWrapper>
             <div className='banner-holder'>
                 <Banner />
             </div>
-
 
             <Container className='site-navigation-area'>
                 <div className='navigation-path-div'>
@@ -77,7 +156,7 @@ export default function Relatorio() {
 
                         <div className='relatorio-section-1-data-final-div'>
                             <DateInput type='Data' />
-                            <DateInput type='Mês' />
+                            <DateInput type='Mês' defaultValue='Dezembro' />
                             <DateInput type='Ano' />
                         </div>
                     </div>
@@ -89,14 +168,46 @@ export default function Relatorio() {
 
                 <Table>
                     {
-                        [
-                            createDataCollapsibleRow('Total arrecado em  dinheiro', 'R$ 13.505,00', [{ nome_instituicao2: 'aaa', valor2: '33' }, { nome_instituicao2: 'aaa2', valor2: '332' }]),
-                            createDataCollapsibleRow('Total utilizado em dinheiro', '-R$ 2.770,00', [{ nome_instituicao2: 'aaa', valor2: '33' }]),
-                            createDataCollapsibleRow('Total de rendimentos', 'R$ 9.250,00', [{ nome_instituicao2: 'aaa', valor2: '33' }]),
-                            createDataCollapsibleRow('Saldo disponível em dinheiro', 'R$ 13.505,00', [{ nome_instituicao2: 'aaa', valor2: '33' }]),
-                        ].map(el => {
-                            return <TableCollapsibleRow row={el} key={Math.random() * 1000} />
-                        })}
+                        <>
+                            <TableCollapsibleRow
+                                row={
+                                    createDataCollapsibleRow(
+                                        'Total arrecado em  dinheiro',
+                                        'R$ ' + Number(state.tableData.totalArrecadado).toFixed(2).toString().replace('.', ','),
+                                        [...state.tableData.entrada]
+                                    )
+                                }
+                            />
+
+                            <TableCollapsibleRow
+                                row={
+                                    createDataCollapsibleRow(
+                                        'Total utilizado em dinheiro',
+                                        '- R$ ' + Number(state.tableData.totalUtilizado).toFixed(2).toString().replace('.', ','),
+                                        [...state.tableData.saida]
+                                    )
+                                }
+                            />
+
+                            <TableCollapsibleRow
+                                row={
+                                    createDataCollapsibleRow(
+                                        'Total de rendimentos',
+                                        'R$ ' + (state.tableData.totalArrecadado - state.tableData.totalUtilizado).toFixed(2).toString().replace('.', ',')
+                                    )
+                                }
+                            />
+
+                            <TableCollapsibleRow
+                                row={
+                                    createDataCollapsibleRow(
+                                        'Saldo disponível em dinheiro',
+                                        'R$ ' + '13.505,00'
+                                    )
+                                }
+                            />
+                        </>
+                    }
                 </Table>
             </Container>
 
@@ -115,9 +226,9 @@ export default function Relatorio() {
                 <Table>
                     {
                         [
-                            createDataCollapsibleRow('Total arrecado em itens', 'R$ 16.275,00', [], '2.596'),
-                            createDataCollapsibleRow('Total utilizado de itens', 'R$ 2.596,00', [{ nome_instituicao2: 'aaa', valor2: '33' }, { nome_instituicao2: 'aaa2', valor2: '332' }], '256'),
-                            createDataCollapsibleRow('Total de disponível de Itens', 'R$ 13.505,00', [{ nome_instituicao2: 'aaa', valor2: '33' }, { nome_instituicao2: 'aaa2', valor2: '332' }], '2.340'),
+                            createDataCollapsibleRow('Total arrecado em itens', 'R$  16.275,00', [], '2.596'),
+                            createDataCollapsibleRow('Total utilizado de itens', 'R$  2.596,00', [{ valor: 'aaa', empresa: '33' }, { valor: 'aaa2', empresa: '332' }], '256'),
+                            createDataCollapsibleRow('Total de disponível de Itens', 'R$  13.505,00', [{ valor: 'aaa', empresa: '33' }, { valor: 'aaa2', empresa: '332' }], '2.340'),
                         ]
                             .map(el => <TableCollapsibleRow row={el} key={Math.random() * 1000} />)
                     }
@@ -141,16 +252,16 @@ export default function Relatorio() {
                 <Table>
                     {
                         [
-                            createDataCollapsibleRow('Doação para a ONG Pais afetivos', '+ R$ 13.000,00', [], ''),
-                            createDataCollapsibleRow('BR02340345 Doação Anônima', '+ R$ 20,00', [], ''),
-                            createDataCollapsibleRow('Doação Empresa Carrefour', '+ R$ 1.200,00', [], ''),
-                            createDataCollapsibleRow('BR0046 Doação Maria Aparecida Silveira', '+ R$ 55,00', [], ''),
-                            createDataCollapsibleRow('Doação  Empresa Fleurity', '+ R$ 2.000,00', [], ''),
-                            createDataCollapsibleRow('BR1245 Doação Anônima', '+ R$ 1.200,00', [], ''),
-                            createDataCollapsibleRow('BR1245 Doação de Alimento Angela Maria Medeiros', '+ R$ 20,00', [], '1'),
-                            createDataCollapsibleRow('Doação Empresa Carrefour', '+ R$ 1.200,00', [], '100'),
-                            createDataCollapsibleRow('BR1245 Doação Anônima', '+ R$ 20,00', [], '5'),
-                            createDataCollapsibleRow('Doação Empresa Carrefour', '+ R$ 1.200,00', [], ''),
+                            createDataCollapsibleRow('Doação para a ONG Pais afetivos', '+ R$  13.000,00', [], ''),
+                            createDataCollapsibleRow('BR02340345 Doação Anônima', '+ R$  20,00', [], ''),
+                            createDataCollapsibleRow('Doação Empresa Carrefour', '+ R$  1.200,00', [], ''),
+                            createDataCollapsibleRow('BR0046 Doação Maria Aparecida Silveira', '+ R$  55,00', [], ''),
+                            createDataCollapsibleRow('Doação  Empresa Fleurity', '+ R$  2.000,00', [], ''),
+                            createDataCollapsibleRow('BR1245 Doação Anônima', '+ R$  1.200,00', [], ''),
+                            createDataCollapsibleRow('BR1245 Doação de Alimento Angela Maria Medeiros', '+ R$  20,00', [], '1'),
+                            createDataCollapsibleRow('Doação Empresa Carrefour', '+ R$  1.200,00', [], '100'),
+                            createDataCollapsibleRow('BR1245 Doação Anônima', '+ R$  20,00', [], '5'),
+                            createDataCollapsibleRow('Doação Empresa Carrefour', '+ R$  1.200,00', [], ''),
                         ]
                             .map(el => <TableCollapsibleRow row={el} key={Math.random() * 1000} />)
                     }

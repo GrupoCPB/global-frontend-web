@@ -13,7 +13,8 @@ const StyledSelect = styled(Select)`
 `
 
 type DateInputType = {
-    type: 'Data' | 'Mês' | 'Ano'
+    type: 'Data' | 'Mês' | 'Ano',
+    defaultValue?: any
 }
 
 const dias = [];
@@ -28,12 +29,12 @@ for (let i = 1; i <= 31; i++) {
     anos.length > 10 ? false : anos.push(i + 2021);
 }
 
-export default function DateInput({ type }: DateInputType) {
+export default function DateInput({ type, defaultValue }: DateInputType) {
     if (type === 'Data') {
         return (
             <label>
                 <strong>{type}:</strong>
-                <StyledSelect defaultValue={1}>
+                <StyledSelect defaultValue={defaultValue ? defaultValue : 1}>
                     {
                         dias.map(el => {
                             return (
@@ -50,7 +51,7 @@ export default function DateInput({ type }: DateInputType) {
         return (
             <label>
                 <strong>{type}:</strong>
-                <StyledSelect defaultValue={'Janeiro'}>
+                <StyledSelect defaultValue={defaultValue ? defaultValue : 'Janeiro'}>
                     {
                         meses.map(el => {
                             return (
@@ -67,7 +68,7 @@ export default function DateInput({ type }: DateInputType) {
         return (
             <label>
                 <strong>{type}:</strong>
-                <StyledSelect defaultValue={2022}>
+                <StyledSelect defaultValue={defaultValue ? defaultValue : 2022}>
                     {
                         anos.map(el => {
                             return (

@@ -4,13 +4,13 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 export function createDataCollapsibleRow(
-    nome_instituicao: string,
+    rowTitle: string,
     valor: string,
-    history?: Array<{ nome_instituicao2: string, valor2: string }>,
+    history?: Array<{ valor: string, empresa: string }>,
     qtd_itens?: string
 ) {
     return {
-        nome_instituicao,
+        rowTitle,
         valor,
         history,
         qtd_itens
@@ -26,7 +26,7 @@ export default function TableCollapsibleRow(props: { row: ReturnType<typeof crea
             <TableRow className={`table-row ${className ? className : ''}`}>
                 <TableCell component="th" className='table-cell th'>
                     <span>
-                        {row.nome_instituicao}
+                        {row.rowTitle}
                     </span>
 
                     <IconButton
@@ -35,8 +35,8 @@ export default function TableCollapsibleRow(props: { row: ReturnType<typeof crea
                         onClick={() => setOpen(!open)}
                         sx={{ 
                             marginLeft: '10px', 
-                            opacity: `${row.history[0] === undefined ? '0' : '1'}`, 
-                            cursor: `${row.history[0] === undefined ? 'auto' : 'pointer'}` 
+                            opacity: `${row.history ? '1' : '0'}`, 
+                            cursor: `${row.history ? 'pointer' : 'auto'}` 
                         }}
                     >
                         {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
@@ -83,14 +83,14 @@ export default function TableCollapsibleRow(props: { row: ReturnType<typeof crea
                                                 row.history.map((el) => (
                                                     <TableRow key={Math.random() * 1000} className='table-row intern' >
                                                         <TableCell className='table-cell intern' component="th" scope="row">
-                                                            {el.nome_instituicao2}
+                                                            {el.empresa}
                                                         </TableCell>
                                                         <TableCell className='table-cell intern last'>
                                                             {
                                                                 row.valor.charAt(0) === '-' ?
-                                                                    <span className='negative-value'>{el.valor2}</span>
+                                                                    <span className='negative-value'>- R$ {(Number(el.valor).toFixed(2)).replace('.', ',')}</span>
                                                                     :
-                                                                    <span className='positive-value'>{el.valor2}</span>
+                                                                    <span className='positive-value'>R$ {(Number(el.valor).toFixed(2)).replace('.', ',')}</span>
                                                             }
                                                         </TableCell>
                                                     </TableRow>
