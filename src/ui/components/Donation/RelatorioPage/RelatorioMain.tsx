@@ -49,24 +49,34 @@ export default function Relatorio() {
         initialDateInputsValues[1] = replaceMonth(initialDateInputsValues[1])
         finalDateInputsValues[1] = replaceMonth(finalDateInputsValues[1])
 
-        return [initialDateInputsValues, finalDateInputsValues]
+        initialDateInputsValues[2].length === 1 ? initialDateInputsValues[2] = '0' + initialDateInputsValues[2] : false
+        finalDateInputsValues[2].length === 1 ? finalDateInputsValues[2] = '0' + finalDateInputsValues[2] : false
+
+        return [initialDateInputsValues.join('-'), finalDateInputsValues.join('-')]
     }
 
     async function getTableData() {
-        // let a = {
-        //     dataInicio: "2021-04-15",
-        //     dataFim: "2021-09-22"
-        // }
+        let [dataInicio, dataFim] = getDateInterval();
 
-        // let b = JSON.stringify(a)
+        let body = {
+            dataInicio,
+            dataFim
+        }
 
-        // const data = await fetch('https://grupocpb.org/api/transparenciaByDate', {method: 'GET', body: b}).then(res => res.json())
+        let stringifiedBody = JSON.stringify(body)
 
-        const data = await fetch('https://grupocpb.org/api/transparencia').then(res => res.json())
+        const data = await fetch(
+            'https://grupocpb.org/api/transparenciaByDate',
+            {
+                method: 'POST',
+                body: stringifiedBody,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        ).then(res => res.json());
 
-        let totalEntrada = 0;
-
-        let totalSaida = 0;
+        let [totalEntrada, totalSaida] = [0, 0];
 
         data.forEach(el => {
             el.operacao === 'entrada' ? totalEntrada += Number(el.valor) : totalSaida += Number(el.valor)
@@ -88,7 +98,6 @@ export default function Relatorio() {
 
     useEffect(() => {
         getTableData()
-        getDateInterval()
     }, [])
 
 
