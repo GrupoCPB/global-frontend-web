@@ -17,10 +17,6 @@ export const StyledMainRelatorioWrapper = styled('main')`
         }
     }
     
-    .banner-holder {
-        background: ${({ theme }) => theme.palette.grey["100"]};
-    }
-    
     .options-section {
         display: flex;
         align-items: center;

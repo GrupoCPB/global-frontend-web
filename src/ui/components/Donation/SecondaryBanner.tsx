@@ -1,13 +1,21 @@
-import { StyledBanner } from "../../../styles/donation/SecondaryBanner.styles"
+import { StyledSecondaryBanner } from "../../../styles/donation/SecondaryBanner.styles";
+import { Container } from "@material-ui/core";
 
-export default function Banner() {
+type SecondaryBannerProps = {
+    titulo: String,
+    hrefAttr: String
+}
+
+export default function SecondaryBanner({ titulo, hrefAttr }: SecondaryBannerProps) {
     return (
-        <StyledBanner>
-            <div className='banner-text'>
-                <h1>Transparência</h1>
-            </div>
+        <StyledSecondaryBanner>
+            <Container className='secondary-banner-container'>
+                <div className='banner-text'>
+                    <h1>{titulo}</h1>
+                </div>
 
-            <div className='banner-background' />
-        </StyledBanner>
+                <div className='banner-background' style={{ backgroundImage: `url(${hrefAttr})` }} />
+            </Container>
+        </StyledSecondaryBanner>
     )
 }

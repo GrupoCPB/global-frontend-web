@@ -3,7 +3,7 @@ import { Container, Box, Button } from '@material-ui/core';
 import RelatorioTextInput from "../../Inputs/RelatorioTextInput";
 import CheckboxInput from "../../Inputs/Checkbox";
 import DateInput from "../../Inputs/DateInput";
-import Banner from "../SecondaryBanner";
+import SecondaryBanner from "../SecondaryBanner";
 import MetasDoarArea from "./MetasDoarAreaButtons";
 import Table from './Table/Table';
 import TableCollapsibleRow from './Table/TableCollapsibleRow';
@@ -103,9 +103,7 @@ export default function Relatorio() {
 
     return (
         <StyledMainRelatorioWrapper>
-            <div className='banner-holder'>
-                <Banner />
-            </div>
+            <SecondaryBanner titulo='Transparência' hrefAttr='/donation_images/banner2_image.png' />
 
             <Container className='site-navigation-area'>
                 <div className='navigation-path-div'>
