@@ -1,5 +1,6 @@
 import { Container } from "@material-ui/core";
 import MetasCard from "./MetasCard";
+import { Grid } from '@material-ui/core';
 
 export default function MetasEmDestaque() {
     const metas_em_destaque = [
@@ -36,20 +37,25 @@ export default function MetasEmDestaque() {
     return (
         <Container maxWidth='xl' className='metasEmDestaque-section'>
             <h1>Metas em destaque</h1>
-            {
-                metas_em_destaque.map(el => {
-                    return (
-                        <MetasCard
-                            nome_projeto={el.nome_projeto}
-                            valor={el.valor}
-                            nome_ong={el.nome_ong}
-                            content={el.content}
-                            votos={el.votos}
-                            key={Math.random() * 1000}
-                        />
-                    )
-                })
-            }
+            <Grid container columns={4} spacing={2}>
+                {
+                    metas_em_destaque.map(el => {
+                        return (
+                            <Grid item sm={4} md={2} lg={1}>
+                                <MetasCard
+                                    nome_projeto={el.nome_projeto}
+                                    valor={el.valor}
+                                    nome_ong={el.nome_ong}
+                                    content={el.content}
+                                    votos={el.votos}
+                                    key={Math.random() * 1000}
+                                />
+                            </Grid>
+                        )
+                    })
+                }
+
+            </Grid>
         </Container>
     )
 }
