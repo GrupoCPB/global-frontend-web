@@ -1,6 +1,6 @@
-import { Container } from "@material-ui/core";
 import MetasCard from "./MetasCard";
 import { Grid } from '@material-ui/core';
+import { StyledMetasEmDestaqueContainer } from "../../../../styles/donation/MetasEmDestaque.styles";
 
 export default function MetasEmDestaque() {
     const metas_em_destaque = [
@@ -35,9 +35,15 @@ export default function MetasEmDestaque() {
     ]
 
     return (
-        <Container maxWidth='xl' className='metasEmDestaque-section'>
-            <h1>Metas em destaque</h1>
-            <Grid container columns={4} columnSpacing={2} rowSpacing={{sm: 4, md: 2}}>
+        <StyledMetasEmDestaqueContainer maxWidth='xl'>
+            <h1 style={{textAlign: 'center'}}>Metas em destaque</h1>
+
+            <Grid 
+                container 
+                columns={4} 
+                columnSpacing={{xs: 0, sm: 1, md: 2, lg: 2}} 
+                rowSpacing={{xs: 4,sm: 4, md: 2}} 
+            >
                 {
                     metas_em_destaque.map(el => {
                         return (
@@ -54,8 +60,7 @@ export default function MetasEmDestaque() {
                         )
                     })
                 }
-
             </Grid>
-        </Container>
+        </StyledMetasEmDestaqueContainer>
     )
 }

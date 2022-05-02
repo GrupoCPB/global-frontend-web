@@ -1,25 +1,45 @@
 import { styled, Container } from '@material-ui/core';
 
-export const StyledBanner = styled(Container)`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
+export const StyledBannerWrapper = styled(Container)`
+    background: linear-gradient(311.76deg, #D4E7FE -15.24%, #FFFFFF 78.85%);
 
-    & div:first-of-type {
-        & h1 {
-            font-size: 3vw;
-            padding-right: 70px;
-            margin: 0
-        }
+    .banner-text-div {
 
-        & p {
-            margin: 30px 0;
-            font-weight: 500;
-            color: #746771
+        @media(max-width: 1200px) {
+            margin-top: 50px;
+            h1 {
+                font-size: 30px;
+            }
         }
     }
-`
 
-export const StyledBannerWrapper = styled('div')`
-    background: linear-gradient(311.76deg, #D4E7FE -15.24%, #FFFFFF 78.85%);
+    h1 {
+        font-size: 18px;
+        padding-right: 70px;
+        margin: 0
+    }
+
+    p {
+        margin: 30px 0;
+        font-weight: 500;
+        color: #746771
+    }
+
+    @media (max-width: 1200px) {
+        h1, p {
+            text-align: center;
+            padding: 0;
+        }
+
+        button {
+            display: block;
+            margin-inline: auto;
+        }
+
+        img {
+            display: block;
+            width: 50%;
+            margin-inline: auto;
+        }
+    }
 `;

@@ -4,11 +4,8 @@ import { styled, Box } from "@material-ui/core";
 export const StyledHomepageCard = styled(Box)`
     width: 90%;
     border-radius: 10px;
-    padding: 30px;
+    padding: 5%;
     background: ${({ theme }) => theme.palette.grey['100']};
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
     .gray-card-top {
         display: flex;
@@ -31,9 +28,16 @@ export const StyledHomepageCard = styled(Box)`
 
     .grey-card-content {
         margin: 30px 0;
+        min-height: 120px;
     }
 
     .grey-card-button {
         width: fit-content;
+
+        @media (max-width: 1200px) {
+            display: block;
+            width: 95%;
+            margin-inline: auto;
+        }
     }
 `;
