@@ -9,72 +9,79 @@ export default function DonationFooter() {
             <Container maxWidth='xl' className='footer-inner-wrapper-1'>
                 <Grid container columns={4} className='the-grid'>
                     <Grid item xs={4} sm={4} md={4} lg={1}>
-                            <DonationLogo size='small' />
+                        <DonationLogo size='small' />
                     </Grid>
 
                     <Grid item xs={4} sm={4} md={4} lg={1}>
-                            <h2>Institucional</h2>
+                        <h2>Institucional</h2>
 
-                            <ul>
-                                <li>
-                                    <a>Doação</a>
-                                </li>
+                        <ul>
+                            <li>
+                                <a>Doação</a>
+                            </li>
 
-                                <li>
-                                    <a>Plataformas</a>
-                                </li>
+                            <li>
+                                <a>Plataformas</a>
+                            </li>
 
-                                <li>
-                                    <a>Contato</a>
-                                </li>
+                            <li>
+                                <a>Contato</a>
+                            </li>
 
-                                <li>
-                                    <a>Serviços</a>
-                                </li>
-                            </ul>
+                            <li>
+                                <a>Serviços</a>
+                            </li>
+                        </ul>
                     </Grid>
 
                     <Grid item xs={4} sm={4} md={4} lg={1}>
-                            <h2>Política e termos</h2>
+                        <h2>Política e termos</h2>
 
-                            <ul>
-                                <li>
-                                    <a>Política de Privacidade</a>
-                                </li>
+                        <ul>
+                            <li>
+                                <a>Política de Privacidade</a>
+                            </li>
 
-                                <li>
-                                    <a>Termos de serviço</a>
-                                </li>
-                            </ul>
+                            <li>
+                                <a>Termos de serviço</a>
+                            </li>
+                        </ul>
                     </Grid>
 
                     <Grid item xs={4} sm={4} md={4} lg={1}>
-                            <h2>Assine nossa newsletter</h2>
-                            <p>
-                                Fique por dentro das novidades da Global ORG! Não perca nenhuma vaga ou novidade.
-                            </p>
+                        <h2>Assine nossa newsletter</h2>
+                        <p>
+                            Fique por dentro das novidades da Global ORG! Não perca nenhuma vaga ou novidade.
+                        </p>
 
-                            <div className='inputs-container'>
-                                <input className='footer-newsletter-email-input' type='email' placeholder='Insira o seu e-mail' />
+                        <div className='inputs-container'>
+                            <input className='footer-newsletter-email-input' type='email' placeholder='Insira o seu e-mail' />
 
-                                <Button
-                                    className='footer-newsletter-send-button'
-                                    variant='contained'
-                                    endIcon={<img src='/donation_images/send-button.png' alt='send' />}
-                                    color='secondary'
-                                >
-                                    Enviar
-                                </Button>
-                            </div>
+                            <Button
+                                className='footer-newsletter-send-button'
+                                variant='contained'
+                                endIcon={<img src='/donation_images/send-button.png' alt='send' />}
+                                color='secondary'
+                            >
+                                Enviar
+                            </Button>
+                        </div>
                     </Grid>
                 </Grid>
             </Container>
 
             <hr></hr>
 
-            <Container maxWidth='xl' className='footer-inner-wrapper-2'>
-                <span>© 2022 Global Donation  |  Todos os direitos reservados</span>
-                <span><SocialMediaLinks /></span>
+            <Container maxWidth='xl'>
+                <Grid container columns={2} alignItems={'center'} justifyContent={'center'}>
+                    <Grid item xs={2} sm={2} md={1} lg={1}>
+                        <span className='direitos'>© 2022 Global Donation  |  Todos os direitos reservados</span>
+                    </Grid>
+
+                    <Grid item xs={2} sm={2} md={1} lg={1}>
+                        <span><SocialMediaLinks /></span>
+                    </Grid>
+                </Grid>
             </Container>
         </StyledFooter>
     )

@@ -3,6 +3,12 @@ import {styled} from '@material-ui/core';
 const StyledSocialMediaLinks = styled('ul')`
     display: flex;
     align-items: center;
+    float: right;
+    justify-content: center;
+
+    @media(max-width: 1200px) {
+        float: none;
+    }
 
     li {
         margin: 0 7px;

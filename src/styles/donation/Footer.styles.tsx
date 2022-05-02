@@ -59,11 +59,10 @@ export const StyledFooter = styled('footer')`
         border-top: solid 1px ${({ theme }) => theme.palette.grey['200']};
     }
 
-    .footer-inner-wrapper-2 {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .direitos {
+        @media(max-width: 1200px) {
+            text-align: center;
+            display: block;
+        }
     }
-
-
 `
