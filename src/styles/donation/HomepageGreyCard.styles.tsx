@@ -2,7 +2,7 @@ import { styled, Box } from "@material-ui/core";
 
 
 export const StyledHomepageCard = styled(Box)`
-    width: 43%;
+    width: 90%;
     border-radius: 10px;
     padding: 30px;
     background: ${({ theme }) => theme.palette.grey['100']};
