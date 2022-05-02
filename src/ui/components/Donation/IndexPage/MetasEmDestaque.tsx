@@ -37,7 +37,7 @@ export default function MetasEmDestaque() {
     return (
         <Container maxWidth='xl' className='metasEmDestaque-section'>
             <h1>Metas em destaque</h1>
-            <Grid container columns={4} columnSpacing={2} rowSpacing={10}>
+            <Grid container columns={4} columnSpacing={2} rowSpacing={{sm: 4, md: 2}}>
                 {
                     metas_em_destaque.map(el => {
                         return (

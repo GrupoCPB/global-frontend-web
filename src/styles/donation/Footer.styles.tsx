@@ -3,43 +3,52 @@ import { styled } from '@material-ui/core';
 export const StyledFooter = styled('footer')`
     background-color: #F3F3F3;
     padding: 50px 0 25px;
+
+    .the-grid {
+        @media(max-width: 1200px) {
+            text-align: center;
+        }
+    }
     
     .footer-inner-wrapper-1 {
-        display: flex;
-        justify-content: space-between;
         padding-bottom: 50px;
 
-        & .footer-area {
-            display: flex;
-            flex-direction: column;
-            width: max-content;
-            padding: 0 50px 0 0;
-
-            &:last-of-type {
-                padding: 0 0 0 50px;
-            }
-
-            h2, h1 {
-                width: max-content;
-                margin: 0;
-            }
+        h2 {
+            margin: 0;
+        }
     
-            ul {
-                flex-direction: column;
+        ul {
+            flex-direction: column;
 
-                li {
-                    margin: 5px 0;
-                }
+            li {
+                margin-top: 5px;
+            }
+        }
+        
+    }
+
+    .inputs-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 60% 40%;
+
+        .footer-newsletter-email-input {
+            padding: 0 0 0 10px;
+        }
+
+        @media (max-width: 1200px) {
+            grid-template-columns: 100%;
+            grid-template-rows: 1fr 1fr;
+
+            .footer-newsletter-send-button {
+                width: 50%;
+                margin-inline: auto;
+                margin-top: 10px;
             }
 
-            & .inputs-container {
+            .footer-newsletter-email-input {
+                margin-inline: auto;
                 width: 70%;
-                display: grid;
-                grid-template-columns: 60% 40%;
-
-                .footer-newsletter-email-input {
-                    padding: 0 0 0 10px;
-                }
             }
         }
     }
@@ -47,7 +56,7 @@ export const StyledFooter = styled('footer')`
     hr {
         width: 86%;
         border: none;
-        border-top: solid 1px ${({theme}) => theme.palette.grey['200']};
+        border-top: solid 1px ${({ theme }) => theme.palette.grey['200']};
     }
 
     .footer-inner-wrapper-2 {
@@ -55,5 +64,6 @@ export const StyledFooter = styled('footer')`
         justify-content: space-between;
         align-items: center;
     }
+
 
 `

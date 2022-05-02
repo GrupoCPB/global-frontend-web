@@ -18,7 +18,7 @@ export default function EmpresasApoio() {
                             '/donation_images/empresas-icons/uniflores.png',
                         ].map(el => {
                             return (
-                                <Grid item sm={10} md={5} lg={2}>
+                                <Grid item xs={10} sm={10} md={5} lg={2}>
                                     <EmpresaIcon imgSrc={el} key={Math.random() * 1000} />
                                 </Grid>
                             )
