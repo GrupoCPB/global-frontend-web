@@ -36,6 +36,10 @@ export const StyledHomepageCard = styled(Box)`
 
         @media (max-width: 1200px) {
             display: block;
+            width: 35%;
+        }
+
+        @media (max-width: 770px) {
             width: 95%;
             margin-inline: auto;
         }

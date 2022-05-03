@@ -40,6 +40,11 @@ export const StyledBannerWrapper = styled(Container)`
             display: block;
             width: 50%;
             margin-inline: auto;
+
+            @media(max-width: 550px) {
+                visibility: hidden;
+                height: 50px;
+            }
         }
     }
 `;

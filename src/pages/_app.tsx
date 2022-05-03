@@ -22,12 +22,12 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/img/logo.png" />
       </Head>
       <ThemeProvider theme={theme}>
-        {/* {
+        {
           isDonationPath ?
           <DonationHeader />
           :
           <Header />
-        } */}
+        }
         <Component {...pageProps} />
         {
           isDonationPath ?

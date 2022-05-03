@@ -70,4 +70,10 @@ export const StyledHeader = styled('header')`
         }
     }
 
+    @media(max-width: 1080px) {
+        .top-bar-ul {
+            flex-direction: column;
+        }
+    }
+
 `;

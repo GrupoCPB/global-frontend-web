@@ -3,15 +3,9 @@ import HeaderLinks from "./HeaderLinks";
 import DonationLogo from './Logo';
 import { Container, Button } from "@material-ui/core";
 import LoginOptions from './LoginOptions';
-import {useState} from 'react';
+
 
 export default function DonationHeader() {
-    const [isOpen, setMenuOpenState] = useState(false);
-
-    function toggleLoginMenu() {
-        setMenuOpenState(!isOpen);
-    }
-
     return (
         <StyledHeader>
             <HeaderLinks />
@@ -46,18 +40,8 @@ export default function DonationHeader() {
                         </li>
                     </ul>
 
-                    <div className='login-or-signin'>   
-                        <Button
-                            className='login-button'
-                            variant='text'
-                            endIcon={<img src='/donation_images/arrow_down.png' />}
-                            sx={{color: '#5c5b5b', fontWeight: 600, fontSize: '15px'}}
-                            onClick={toggleLoginMenu}
-                        >
-                            Login
-                        </Button>
-
-                        <LoginOptions isOpen={isOpen} />
+                    <div className='login-or-signin'>
+                        <LoginOptions />
 
                         <Button
                             className='variant-contained'
