@@ -1,79 +1,82 @@
 import { styled } from '@material-ui/core'
 
 export const StyledHeader = styled('header')`
-    ul {
-        padding: 0;
-        list-style-type: none;
+    .main-flex-div {
         display: flex;
+        align-items: center;
     }
 
-    a {
-        text-decoration: none;
-        color:#5E595C;
-        font-weight: 500;
+    .nav {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 75% 25%;
+
+        @media (max-width: 1000px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 60% 40%;
+            position: absolute;
+            width: 40%;
+            top: 0;
+            right: 0;
+            background: white;
+            padding-top: 10px;
+            z-index: 10;
+        }
+
+        ul {
+            margin: 0;
+            padding: 20px 0;
+
+            li {
+                a:hover {
+
+                    @media (min-width: 1000px) {
+                        border-bottom: solid 1px red;
+                    }
+                }
+            }
+        }
     }
 
-    .header-links-main-wrapper {
+    .nav-ul-1 {
         display: flex;
-        justify-content: end;
-        border-bottom: solid 1px ${({ theme }) => theme.palette.grey['200']};
-        padding-right: 100px;
-        
-        .header-links-inner-wrapper {
+        justify-content: space-around;
+
+        li {
             display: flex;
             align-items: center;
 
-            li {
-                margin: 0 10px;
-                    
-                a {
-                    display: grid;
-                    place-items: center;
-                }
+            &:hover {
+                color: ${({theme}) => theme.palette.secondary.main};
             }
         }
 
-        .idioma {
-            margin-left: 40px;
-            display: grid;
-            grid-template-columns: auto auto;
-            column-gap: 20px;
-            place-items: center;
-        }
-    }
-
-    .donation-header-main-bar {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        display: flex;
-        justify-content: space-between;
-
-        .top-bar-nav {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-
-            .top-bar-ul {
-                margin-right: 30px;
-
-                li {
-                    margin: 0 20px;
-                }
-            }
-
-            .login-or-signin {
-                display: flex;
-                align-items: center;
-                column-gap: 20px;
-                position: relative;
-            }
-        }
-    }
-
-    @media(max-width: 1080px) {
-        .top-bar-ul {
+        @media (max-width: 1000px) {
             flex-direction: column;
+
+            li {
+                padding: 10px 20px;
+                justify-content: center;
+                cursor: pointer;
+
+                &:hover {
+                    background: ${({theme}) => theme.palette.secondary.main};
+                    color: white;
+                }
+            }
         }
     }
 
+    .nav-ul-2 {
+        justify-content: end;
+        column-gap: 10px;
+        width: auto;
+
+        @media (max-width: 1000px) {
+            flex-direction: column-reverse;
+            row-gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 `;

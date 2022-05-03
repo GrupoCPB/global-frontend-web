@@ -9,6 +9,10 @@ const StyledMenu = styled(Menu)`
     .MuiMenuItem-root:hover {
         background-color: ${({theme}) => theme.palette.secondary.main}
     }
+
+    .MuiGrid-item {
+        max-width: 100%;
+    }
 `
 
 export default function LoginOptions() {
@@ -39,15 +43,19 @@ export default function LoginOptions() {
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
             >
-                <Grid container columns={1} sx={{maxWidth: 'fit-content'}}>
-                    <Grid item xs={1}>
+                <Grid item columns={2}>
+                    <Grid item xs={2}>
                         <MenuItem onClick={handleClose}>
                             Sou empresa
                         </MenuItem>
                     </Grid>
 
-                    <Grid item xs={1}>
+                    <Grid item xs={2}>
 
                         <MenuItem onClick={handleClose}>
                             Sou instituição
