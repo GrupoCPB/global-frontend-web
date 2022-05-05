@@ -96,9 +96,9 @@ export default function Relatorio() {
         })
     }
 
-    useEffect(() => {
-        getTableData()
-    }, [])
+    // useEffect(() => {
+    //     getTableData()
+    // }, [])
 
 
     return (

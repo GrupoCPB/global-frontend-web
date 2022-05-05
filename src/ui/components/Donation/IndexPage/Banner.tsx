@@ -5,7 +5,7 @@ export default function Banner() {
     return (
         <StyledBannerWrapper maxWidth='xl'>
                 <Grid container columns={2} alignItems={'center'}>
-                    <Grid item xs={2} sm={2} md={2} lg={1}>
+                    <Grid item xs={2} sm={2} md={2} lg={1} alignSelf='flex-start' sx={{marginTop: '50px'}}>
                         <div className='banner-text-div'>
                             <h1>Faça sua doação para a causa certa</h1>
 

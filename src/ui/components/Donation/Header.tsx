@@ -1,62 +1,65 @@
-import { StyledHeader } from "../../../styles/donation/Header.styles";
-import HeaderLinks from "./HeaderLinks";
-import DonationLogo from './Logo';
 import { Container, Button, Grid } from "@material-ui/core";
 import LoginOptions from './LoginOptions';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import HeaderNav from "./IndexPage/HeaderNavigation";
+import HeaderTopBar from "./HeaderTopBar";
 
 
 export default function DonationHeader() {
+    const [width, setWidth] = useState(0)
+
+    function watchResize(ev) {
+        setWidth(ev.target.innerWidth)
+    }
+
+    useEffect(() => {
+        setWidth(window.innerWidth)
+    }, [])
+
+    useEffect(() => {
+        window.addEventListener('resize', watchResize)
+    }, [])
+
     return (
         <>
-            <HeaderLinks />
+            <Container maxWidth={false} disableGutters>
+                <HeaderTopBar />
+            </Container>
 
-            <Container maxWidth='xl' component={StyledHeader}>
-                <div className='main-flex-div'>
-                    <div className='div-1'>
-                        <DonationLogo />
-                    </div>
+            <Container>
+                <Grid container columns={12} justifyContent={`${width > 1000 ? 'space-between' : 'space-around'}`} alignItems={'center'} padding='20px 0'>
+                    <Grid item xs={'auto'} sm={'auto'} md={'auto'} lg={'auto'}>
+                        <img src='/donation_images/donation_logo2.png' />
+                    </Grid>
 
-                    <nav className='nav'>
+                    <Grid container item xs={'auto'} sm={'auto'} md={'auto'} lg={'auto'}>
+                        <HeaderNav />
+                    </Grid>
 
-                        <ul className='nav-ul-1'>
+                    {
+                        width > 1000 ?
+                            <>
+                                <Grid item xs={'auto'} sm={'auto'} md={'auto'} lg={'auto'}>
+                                    <LoginOptions />
+                                </Grid>
 
-                            <li>
-                                <Link href='#'>Doação</Link>
-                            </li>
+                                <Grid item xs={'auto'} sm={'auto'} md={'auto'} lg={'auto'}>
+                                    <Button
+                                        className='variant-contained'
+                                        variant='contained'
+                                        color='secondary'
+                                    >
+                                        Seja um doador
+                                    </Button>
+                                </Grid>
+                            </>
 
-                            <li>
-                                <Link href='#'>Plataformas</Link>
-                            </li>
+                            :
 
-                            <li>
-                                <Link href='#'>Contato</Link>
+                            null
+                    }
 
-                            </li>
-
-                            <li>
-                                <Link href='#'>Serviços</Link>
-                            </li>
-
-                        </ul>
-
-                        <ul className='nav-ul-2'>
-                            <li>
-                                <LoginOptions />
-                            </li>
-
-                            <li>
-                                <Button
-                                    className='variant-contained'
-                                    variant='contained'
-                                    color='secondary'
-                                >
-                                    Seja um doador
-                                </Button>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                </Grid>
             </Container>
         </>
     )

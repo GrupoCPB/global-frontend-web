@@ -6,16 +6,26 @@ export const StyledHeader = styled('header')`
         align-items: center;
     }
 
-    .nav {
+    .open-close-button {
+        @media (min-width: 1000px) {
+            display: none;
+        }
+
+    }
+
+    nav {
         width: 100%;
         display: grid;
         grid-template-columns: 75% 25%;
+        transition: transform 0.3s ease;
+        transform-origin: top center;
 
         @media (max-width: 1000px) {
             grid-template-columns: 1fr;
             grid-template-rows: 60% 40%;
-            position: absolute;
-            width: 40%;
+            position: relative;
+            border: solid 1px red;
+            width: 100vw;
             top: 0;
             right: 0;
             background: white;
@@ -36,6 +46,17 @@ export const StyledHeader = styled('header')`
                 }
             }
         }
+
+        &.open {
+            transform: scaleY(1);
+        }
+
+        &.closed {
+            width: 0;
+            transform: scaleY(0);
+        }
+
+
     }
 
     .nav-ul-1 {

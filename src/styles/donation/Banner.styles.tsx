@@ -4,6 +4,9 @@ export const StyledBannerWrapper = styled(Container)`
     background: linear-gradient(311.76deg, #D4E7FE -15.24%, #FFFFFF 78.85%);
 
     .banner-text-div {
+        h1 {
+            font-size: 50px;
+        }
 
         @media(max-width: 1200px) {
             margin-top: 50px;
